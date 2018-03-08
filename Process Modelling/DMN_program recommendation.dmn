@@ -26,26 +26,29 @@
       <requiredAuthority href="#KnowledgeSource_1r47fgu" />
     </authorityRequirement>
     <decisionTable id="decisionTable">
-      <input id="input1" label="Degree">
+      <input id="input1" label="Willingness to travel">
         <inputExpression id="inputExpression1" typeRef="string">
           <text></text>
         </inputExpression>
       </input>
-      <input id="InputClause_05bn29y" label="English Skills">
+      <input id="InputClause_05bn29y" label="IT Knowledge">
         <inputExpression id="LiteralExpression_1in9170" typeRef="string" />
       </input>
-      <input id="InputClause_1acidxy" label="Future career position">
+      <input id="InputClause_1acidxy" label="Business Knowledge">
         <inputExpression id="LiteralExpression_0z9cols" typeRef="string" />
       </input>
-      <output id="output1" label="" name="" typeRef="string" />
+      <input id="InputClause_1crcj8s" label="Language affinity">
+        <inputExpression id="LiteralExpression_04fjt9l" typeRef="string" />
+      </input>
+      <output id="output1" label="Study Program" name="" typeRef="string" />
     </decisionTable>
   </decision>
-  <inputData id="InputData_0cmg3xf" name="Recommend program">
+  <inputData id="InputData_0cmg3xf" name="Questionnaire result">
     <extensionElements>
       <biodi:bounds x="218" y="113" width="125" height="45" />
     </extensionElements>
   </inputData>
-  <knowledgeSource id="KnowledgeSource_1r47fgu" name="Online questionaire">
+  <knowledgeSource id="KnowledgeSource_1r47fgu" name="Online questionnaire">
     <extensionElements>
       <biodi:bounds x="432" y="206" width="100" height="63" />
     </extensionElements>
