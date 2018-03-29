@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/1.0" id="definitions_04ls3c5" name="Decision" namespace="http://camunda.org/schema/1.0/dmn">
-  <decision id="Decision_13nychf" name="Determine eligible programs">
+  <decision id="Decision_13nychf" name="Determine possible programs">
     <extensionElements>
       <biodi:bounds x="200" y="200" width="180" height="80" />
       <biodi:edge source="BusinessKnowledgeModel_1mvfssx">

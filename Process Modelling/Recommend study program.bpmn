@@ -15,15 +15,15 @@
         <bpmn:flowNodeRef>EndEvent_10e3s8x</bpmn:flowNodeRef>
       </bpmn:lane>
       <bpmn:lane id="Lane_0w5v8qj" name="Prospective candidate">
-        <bpmn:flowNodeRef>Task_1f5sbiy</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Task_1sn8j3g</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Task_1svjg4p</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Task_0de63ii</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>ExclusiveGateway_0iut2h5</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>StartEvent_1yy92ef</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_1f5sbiy</bpmn:flowNodeRef>
       </bpmn:lane>
     </bpmn:laneSet>
-    <bpmn:businessRuleTask id="Task_1ezpat5" name="Determine possible programs" camunda:decisionRef="">
+    <bpmn:businessRuleTask id="Task_1ezpat5" name="Determine possible programs" camunda:decisionRef="definitions_04ls3c5">
       <bpmn:incoming>SequenceFlow_1j0ig7w</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_1y4ik8t</bpmn:outgoing>
       <bpmn:property id="Property_0ewyjye" name="__targetRef_placeholder" />
@@ -67,13 +67,6 @@
     <bpmn:startEvent id="StartEvent_1yy92ef" name="Prospective candidate entered website">
       <bpmn:outgoing>SequenceFlow_0fijfrx</bpmn:outgoing>
     </bpmn:startEvent>
-    <bpmn:task id="Task_1f5sbiy" name="Fill in possibility questionnaire">
-      <bpmn:incoming>SequenceFlow_0fijfrx</bpmn:incoming>
-      <bpmn:outgoing>SequenceFlow_1j0ig7w</bpmn:outgoing>
-      <bpmn:dataOutputAssociation id="DataOutputAssociation_1927nli">
-        <bpmn:targetRef>DataStoreReference_1tyqt99</bpmn:targetRef>
-      </bpmn:dataOutputAssociation>
-    </bpmn:task>
     <bpmn:task id="Task_1sn8j3g" name="Fill in recommendation questionnaire">
       <bpmn:incoming>SequenceFlow_1h8c3c7</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_10k8wp0</bpmn:outgoing>
@@ -114,6 +107,19 @@
       </bpmn:dataInputAssociation>
     </bpmn:businessRuleTask>
     <bpmn:sequenceFlow id="SequenceFlow_1s2v550" sourceRef="Task_0de63ii" targetRef="Task_1eq2y90" />
+    <bpmn:userTask id="Task_1f5sbiy" name="Fill in possibility questionnaire">
+      <bpmn:extensionElements>
+        <camunda:formData>
+          <camunda:formField id="FormField_2b4mt5m" label="First Name" type="string" />
+        </camunda:formData>
+      </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_0fijfrx</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1j0ig7w</bpmn:outgoing>
+      <bpmn:dataOutputAssociation />
+      <bpmn:dataOutputAssociation id="DataOutputAssociation_1927nli">
+        <bpmn:targetRef>DataStoreReference_1tyqt99</bpmn:targetRef>
+      </bpmn:dataOutputAssociation>
+    </bpmn:userTask>
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_1tvwo2i">
@@ -211,14 +217,11 @@
           <dc:Bounds x="48" y="-17" width="89" height="38" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Task_1f5sbiy_di" bpmnElement="Task_1f5sbiy">
-        <dc:Bounds x="158.10796221322536" y="-78" width="100" height="80" />
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="SequenceFlow_0fijfrx_di" bpmnElement="SequenceFlow_0fijfrx">
         <di:waypoint xsi:type="dc:Point" x="110" y="-38" />
         <di:waypoint xsi:type="dc:Point" x="158" y="-38" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="134" y="-60" width="0" height="13" />
+          <dc:Bounds x="89" y="-59.5" width="90" height="13" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="DataOutputAssociation_1927nli_di" bpmnElement="DataOutputAssociation_1927nli">
@@ -231,7 +234,7 @@
         <di:waypoint xsi:type="dc:Point" x="333" y="-38" />
         <di:waypoint xsi:type="dc:Point" x="333" y="140" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="295.5" y="-59.5" width="0" height="13" />
+          <dc:Bounds x="250.5" y="-59.5" width="90" height="13" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="Task_1sn8j3g_di" bpmnElement="Task_1sn8j3g">
@@ -308,6 +311,9 @@
         <di:waypoint xsi:type="dc:Point" x="1232" y="349" />
         <di:waypoint xsi:type="dc:Point" x="1232" y="220" />
       </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="UserTask_08rylw4_di" bpmnElement="Task_1f5sbiy">
+        <dc:Bounds x="158" y="-78" width="100" height="80" />
+      </bpmndi:BPMNShape>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
 </bpmn:definitions>
