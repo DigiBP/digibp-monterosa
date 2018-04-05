@@ -3,35 +3,26 @@
   <bpmn:collaboration id="Collaboration_1tvwo2i">
     <bpmn:participant id="Participant_0hyi7s9" name="FHNW School of Business - Program recommendation process" processRef="Process_1h24rrq" />
   </bpmn:collaboration>
-  <bpmn:process id="Process_1h24rrq" isExecutable="false">
+  <bpmn:process id="Process_1h24rrq" isExecutable="true">
     <bpmn:laneSet>
       <bpmn:lane id="Lane_1r1z74m" name="Google forms - prospect interface">
-        <bpmn:flowNodeRef>Task_1ezpat5</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Task_09mm504</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Task_172vilv</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Task_1d5ecel</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Task_0j82y17</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Task_1eq2y90</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>EndEvent_10e3s8x</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_1ezpat5</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_172vilv</bpmn:flowNodeRef>
       </bpmn:lane>
       <bpmn:lane id="Lane_0w5v8qj" name="Prospective candidate">
-        <bpmn:flowNodeRef>Task_1sn8j3g</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Task_1svjg4p</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Task_0de63ii</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>ExclusiveGateway_0iut2h5</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>StartEvent_1yy92ef</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Task_1f5sbiy</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_1sn8j3g</bpmn:flowNodeRef>
       </bpmn:lane>
     </bpmn:laneSet>
-    <bpmn:businessRuleTask id="Task_1ezpat5" name="Determine possible programs" camunda:decisionRef="definitions_04ls3c5">
-      <bpmn:incoming>SequenceFlow_1j0ig7w</bpmn:incoming>
-      <bpmn:outgoing>SequenceFlow_1y4ik8t</bpmn:outgoing>
-      <bpmn:property id="Property_0ewyjye" name="__targetRef_placeholder" />
-      <bpmn:dataInputAssociation id="DataInputAssociation_1fzi56s">
-        <bpmn:sourceRef>DataStoreReference_1tyqt99</bpmn:sourceRef>
-        <bpmn:targetRef>Property_0ewyjye</bpmn:targetRef>
-      </bpmn:dataInputAssociation>
-    </bpmn:businessRuleTask>
     <bpmn:task id="Task_09mm504" name="Show possible study programs">
       <bpmn:incoming>SequenceFlow_1y4ik8t</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_1h8c3c7</bpmn:outgoing>
@@ -41,15 +32,6 @@
     <bpmn:sequenceFlow id="SequenceFlow_1j0ig7w" sourceRef="Task_1f5sbiy" targetRef="Task_1ezpat5" />
     <bpmn:sequenceFlow id="SequenceFlow_1h8c3c7" sourceRef="Task_09mm504" targetRef="Task_1sn8j3g" />
     <bpmn:sequenceFlow id="SequenceFlow_10k8wp0" sourceRef="Task_1sn8j3g" targetRef="Task_172vilv" />
-    <bpmn:businessRuleTask id="Task_172vilv" name="Determine recommendable programs">
-      <bpmn:incoming>SequenceFlow_10k8wp0</bpmn:incoming>
-      <bpmn:outgoing>SequenceFlow_1vbk8v8</bpmn:outgoing>
-      <bpmn:property id="Property_0xhxcc4" name="__targetRef_placeholder" />
-      <bpmn:dataInputAssociation id="DataInputAssociation_0fmaq2o">
-        <bpmn:sourceRef>DataStoreReference_1tyqt99</bpmn:sourceRef>
-        <bpmn:targetRef>Property_0xhxcc4</bpmn:targetRef>
-      </bpmn:dataInputAssociation>
-    </bpmn:businessRuleTask>
     <bpmn:task id="Task_1d5ecel" name="Ask prospect to take further tests">
       <bpmn:incoming>SequenceFlow_1vbk8v8</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_0frwcxx</bpmn:outgoing>
@@ -67,13 +49,6 @@
     <bpmn:startEvent id="StartEvent_1yy92ef" name="Prospective candidate entered website">
       <bpmn:outgoing>SequenceFlow_0fijfrx</bpmn:outgoing>
     </bpmn:startEvent>
-    <bpmn:task id="Task_1sn8j3g" name="Fill in recommendation questionnaire">
-      <bpmn:incoming>SequenceFlow_1h8c3c7</bpmn:incoming>
-      <bpmn:outgoing>SequenceFlow_10k8wp0</bpmn:outgoing>
-      <bpmn:dataOutputAssociation id="DataOutputAssociation_1bs7b4r">
-        <bpmn:targetRef>DataStoreReference_1tyqt99</bpmn:targetRef>
-      </bpmn:dataOutputAssociation>
-    </bpmn:task>
     <bpmn:task id="Task_1svjg4p" name="Choose to take further tests">
       <bpmn:incoming>SequenceFlow_0frwcxx</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_13krkul</bpmn:outgoing>
@@ -107,10 +82,12 @@
       </bpmn:dataInputAssociation>
     </bpmn:businessRuleTask>
     <bpmn:sequenceFlow id="SequenceFlow_1s2v550" sourceRef="Task_0de63ii" targetRef="Task_1eq2y90" />
-    <bpmn:userTask id="Task_1f5sbiy" name="Fill in possibility questionnaire">
+    <bpmn:userTask id="Task_1f5sbiy" name="Fill in possibility questionnaire" camunda:formKey="possibility_questionnaire" camunda:assignee="demo">
       <bpmn:extensionElements>
         <camunda:formData>
-          <camunda:formField id="FormField_2b4mt5m" label="First Name" type="string" />
+          <camunda:formField id="firstname" label="First Name" type="string" />
+          <camunda:formField id="lastname" label="Last Name" type="string" />
+          <camunda:formField id="e-mail" label="E-Mail" type="string" />
         </camunda:formData>
       </bpmn:extensionElements>
       <bpmn:incoming>SequenceFlow_0fijfrx</bpmn:incoming>
@@ -120,20 +97,41 @@
         <bpmn:targetRef>DataStoreReference_1tyqt99</bpmn:targetRef>
       </bpmn:dataOutputAssociation>
     </bpmn:userTask>
+    <bpmn:userTask id="Task_1sn8j3g" name="Fill in recommendation questionnaire">
+      <bpmn:incoming>SequenceFlow_1h8c3c7</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_10k8wp0</bpmn:outgoing>
+      <bpmn:dataOutputAssociation />
+      <bpmn:dataOutputAssociation id="DataOutputAssociation_1bs7b4r">
+        <bpmn:targetRef>DataStoreReference_1tyqt99</bpmn:targetRef>
+      </bpmn:dataOutputAssociation>
+    </bpmn:userTask>
+    <bpmn:businessRuleTask id="Task_1ezpat5" name="Determine possible programs" camunda:decisionRef="definitions_04ls3c5">
+      <bpmn:incoming>SequenceFlow_1j0ig7w</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1y4ik8t</bpmn:outgoing>
+      <bpmn:property name="__targetRef_placeholder" />
+      <bpmn:dataInputAssociation />
+      <bpmn:dataInputAssociation />
+      <bpmn:dataInputAssociation id="DataInputAssociation_1fzi56s">
+        <bpmn:sourceRef>DataStoreReference_1tyqt99</bpmn:sourceRef>
+      </bpmn:dataInputAssociation>
+    </bpmn:businessRuleTask>
+    <bpmn:serviceTask id="Task_172vilv" name="Determine recommendable programs">
+      <bpmn:incoming>SequenceFlow_10k8wp0</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1vbk8v8</bpmn:outgoing>
+      <bpmn:property name="__targetRef_placeholder" />
+      <bpmn:dataInputAssociation />
+      <bpmn:dataInputAssociation id="DataInputAssociation_0fmaq2o">
+        <bpmn:sourceRef>DataStoreReference_1tyqt99</bpmn:sourceRef>
+      </bpmn:dataInputAssociation>
+    </bpmn:serviceTask>
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_1tvwo2i">
       <bpmndi:BPMNShape id="Participant_0hyi7s9_di" bpmnElement="Participant_0hyi7s9">
         <dc:Bounds x="-16" y="-97" width="1554" height="453" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="BusinessRuleTask_0c8zqou_di" bpmnElement="Task_1ezpat5">
-        <dc:Bounds x="283" y="140" width="100" height="80" />
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Lane_1r1z74m_di" bpmnElement="Lane_1r1z74m">
         <dc:Bounds x="14" y="129" width="1524" height="227" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="BusinessRuleTask_0j4oh1g_di" bpmnElement="Task_172vilv">
-        <dc:Bounds x="668" y="140" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Task_0j82y17_di" bpmnElement="Task_0j82y17">
         <dc:Bounds x="1340" y="140" width="100" height="80" />
@@ -145,7 +143,7 @@
         <di:waypoint xsi:type="dc:Point" x="383" y="180" />
         <di:waypoint xsi:type="dc:Point" x="413" y="180" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="398" y="158" width="0" height="13" />
+          <dc:Bounds x="353" y="158.5" width="90" height="13" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="DataStoreReference_1tyqt99_di" bpmnElement="DataStoreReference_1tyqt99">
@@ -177,7 +175,7 @@
         <di:waypoint xsi:type="dc:Point" x="768" y="180" />
         <di:waypoint xsi:type="dc:Point" x="800" y="180" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="784" y="158" width="0" height="13" />
+          <dc:Bounds x="739" y="158.5" width="90" height="13" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="SequenceFlow_15iytyu_di" bpmnElement="SequenceFlow_15iytyu">
@@ -237,15 +235,12 @@
           <dc:Bounds x="250.5" y="-59.5" width="90" height="13" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNShape id="Task_1sn8j3g_di" bpmnElement="Task_1sn8j3g">
-        <dc:Bounds x="527" y="-78" width="100" height="80" />
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="SequenceFlow_1h8c3c7_di" bpmnElement="SequenceFlow_1h8c3c7">
         <di:waypoint xsi:type="dc:Point" x="463" y="140" />
         <di:waypoint xsi:type="dc:Point" x="463" y="-38" />
         <di:waypoint xsi:type="dc:Point" x="527" y="-38" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="478" y="44.5" width="0" height="13" />
+          <dc:Bounds x="433" y="44.5" width="90" height="13" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="DataOutputAssociation_1bs7b4r_di" bpmnElement="DataOutputAssociation_1bs7b4r">
@@ -258,7 +253,7 @@
         <di:waypoint xsi:type="dc:Point" x="577" y="180" />
         <di:waypoint xsi:type="dc:Point" x="668" y="180" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="592" y="84.5" width="0" height="13" />
+          <dc:Bounds x="547" y="84.5" width="90" height="13" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="Task_1svjg4p_di" bpmnElement="Task_1svjg4p">
@@ -313,6 +308,15 @@
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="UserTask_08rylw4_di" bpmnElement="Task_1f5sbiy">
         <dc:Bounds x="158" y="-78" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="UserTask_0jp3zrr_di" bpmnElement="Task_1sn8j3g">
+        <dc:Bounds x="527" y="-78" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BusinessRuleTask_1w4a624_di" bpmnElement="Task_1ezpat5">
+        <dc:Bounds x="283" y="140" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ServiceTask_1brykjs_di" bpmnElement="Task_172vilv">
+        <dc:Bounds x="668" y="140" width="100" height="80" />
       </bpmndi:BPMNShape>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
