@@ -60,10 +60,35 @@
       <bpmn:incoming>SequenceFlow_0keke7i</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_1vtly9j</bpmn:outgoing>
     </bpmn:userTask>
-    <bpmn:userTask id="Task_08dx14m" name="initiate questionnaire" camunda:assignee="demo">
+    <bpmn:userTask id="Task_08dx14m" name="Fill in recommendation questionnaire" camunda:assignee="demo">
       <bpmn:extensionElements>
         <camunda:formData>
-          <camunda:formField id="initiatequestionnaire" label="Thank you! We will initiate further tests now" type="boolean" />
+          <camunda:formField id="description" label="Please rate the aspects below according to your personal interest" type="string" defaultValue="you can choose low, medium or high" />
+          <camunda:formField id="travel" label="Affinity to travel" type="enum">
+            <camunda:value id="Value_2mrih6h" name="Low" />
+            <camunda:value id="Value_18hru4f" name="Medium" />
+            <camunda:value id="Value_1k5tho5" name="High" />
+          </camunda:formField>
+          <camunda:formField id="language" label="Interest in foreign languages" type="enum">
+            <camunda:value id="Value_1ikhsht" name="Low" />
+            <camunda:value id="Value_378iggm" name="Medium" />
+            <camunda:value id="Value_1sblvj8" name="High" />
+          </camunda:formField>
+          <camunda:formField id="cultural" label="Cultural curiosity" type="enum">
+            <camunda:value id="Value_3rcfuo9" name="Low" />
+            <camunda:value id="Value_39h85ef" name="Medium" />
+            <camunda:value id="Value_24td03k" name="High" />
+          </camunda:formField>
+          <camunda:formField id="europeanculture" label="Interest in European cultures" type="enum">
+            <camunda:value id="Value_3egcmue" name="Low" />
+            <camunda:value id="Value_2kb6fut" name="Medium" />
+            <camunda:value id="Value_204j7ll" name="High" />
+          </camunda:formField>
+          <camunda:formField id="internationalculture" label="Interest in internatonal cultures" type="enum">
+            <camunda:value id="Value_3h9qr2q" name="Low" />
+            <camunda:value id="Value_3rrn624" name="Medium" />
+            <camunda:value id="Value_3d59625" name="High" />
+          </camunda:formField>
         </camunda:formData>
       </bpmn:extensionElements>
       <bpmn:incoming>SequenceFlow_0etpshl</bpmn:incoming>
