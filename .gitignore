@@ -64,7 +64,3 @@ vendor/
 .vpprefdata/
 *.vpp~*
 *.vpp.*
-
-### Environment Variables ###
-*.env
-application-local.yaml
