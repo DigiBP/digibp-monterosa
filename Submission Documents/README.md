@@ -4,6 +4,26 @@
 
 #### Authors: Fabian Feiler, Lia Flück, Daniel Horn, Puneeth Krishna Suresh, Daniel Werner ####
 
+## Introduction ##
+### Motivation ###
+### Vision ###
+### Project Organisation ###
+
+## Process ##
+### Process Description ###
+### Process Modell ###
+#### Task Types ####
+#### Event Types ####
+#### Users & Groups ####
+
+## Digitalisation ##
+### DMN ###
+### Services ###
+#### MS Excel ####
+#### ChatBot ####
+### Integration ###
+## Step by step Instruction ##
+
 
 The overall process that is digitised within this module is the **FHNW School of Business Onboarding Process**. 
 This process includes two sub-processes, the **Recommend Study Program process** and the **Program Registration Process**. 
