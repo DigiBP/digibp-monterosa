@@ -9,14 +9,14 @@ The overall process that is digitised within this module is the FHNW School of B
 The FHNW SChoolf of Business Onboarding Process leads potential students of the School of Business from the first interest in being a student to the actual admission in a program (in a first step only BSc programs). In the sub-process "Recommend Study Program", the interested person is supported in choosing a program that matches his/her skills, interests and life-style. Also, the person can then participate in tests that enforce his/her choice. As soon as the interested person decides to register for the recommended program, the second sub-process, the "Program Registration" process, is triggered. 
 
 Sub-Process: "Recommend Study Program"
-Process Goals: Support prospective students in their program decision, eliminate programs from the choice that do not meet the basic requirment for the person (does not meet language requirement, does not meet requirement for full-time/part-time program), 
-Inputs: form "Possbility Questionnaire", form "Recommendation Questionnaire", discretionary tasks (Loop) "Skills Tests"
-Outputs: List of possible programs, list of program recommendations, test results
+- Process Goals: Support prospective students in their program decision, eliminate programs from the choice that do not meet the basic requirment for the person (does not meet language requirement, does not meet requirement for full-time/part-time program), 
+- Inputs: form "Possbility Questionnaire", form "Recommendation Questionnaire", discretionary tasks (Loop) "Skills Tests"
+- Outputs: List of possible programs, list of program recommendations, test results
 
 Sub-Process: "Program Registration"
-Process Goals: Registration for program, check eligibility, payment of registration fee, add profile to EVENTO, discretionary task: interview
-Inputs: form "Program Registration", submit required documents (not digital), registration fee payment
-Outputs: program registration
+- Process Goals: Registration for program, check eligibility, payment of registration fee, add profile to EVENTO, discretionary task: interview
+- Inputs: form "Program Registration", submit required documents (not digital), registration fee payment
+- Outputs: program registration
 
 
 "Recommend Study Program" as-is process:
