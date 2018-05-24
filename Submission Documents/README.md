@@ -6,7 +6,15 @@ digibp-monterosa
 
 
 ## Introduction ##
+
+
 ### Motivation ###
+
+All students of the FHNW School of Business have gone through one big decision. What is the optimal degree program for one's interests, skills and career prospectives? What are the differences and specialities of the different programs? What are the basic criteria for a program? Many students have given feedback that they wish more support of these decisions from the school. The sub-process **Recommend Study Program** of the overall **FHNW School of Business Onboarding Process** solve this problem by providing a digitised workflow that leads students interactively through finding the answers to this questions.
+
+As one of the group members of the digibp-monterosa team works for the FHNW School of Business and is the project manager of the digitalisation project of the sub-process **program registration** this is the perfect opportunity to introduce the new sub-process **Recommend study program**.
+
+
 ### Vision ###
 
 Vision:
