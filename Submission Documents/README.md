@@ -5,20 +5,21 @@
 #### Authors: Fabian Feiler, Lia Flück, Daniel Horn, Puneeth Krishna Suresh, Daniel Werner ####
 
 
-The overall process that is digitised within this module is the FHNW School of Business Onboarding Process. This process includes two sub-processes, the "Recommend Study Program" process and the "Program Registration" Process. As the "Program Registration" process is being digitised within an ongoing project by the School of Business, the main focus in this module lies on the "Recommend Study Program" process.
+The overall process that is digitised within this module is the **FHNW School of Business Onboarding Process**. 
+This process includes two sub-processes, the **Recommend Study Program process** and the **Program Registration Process**. 
+As the **Program Registration process** is being digitised within an ongoing project by the School of Business, 
+the main focus in this module lies on the **Recommend Study Program process**.
 
-![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/Processes.PNG)
+![alt text](https://github.com/DigiBP/digibp-monterosa/tree/master/Submission%20Documents/Images/processes.png)
 
+The FHNW school of Business Onboarding Process leads potential students of the School of Business from the first interest in being a student to the actual admission in a program (in a first step only BSc programs). In the sub-process **Recommend Study Program process**, the interested person is supported in choosing a program that matches his/her skills, interests and life-style. Also, the person can then participate in tests that enforce his/her choice. As soon as the interested person decides to register for the recommended program, the second sub-process, the **Program Registration process**, is triggered. 
 
-
-The FHNW SChoolf of Business Onboarding Process leads potential students of the School of Business from the first interest in being a student to the actual admission in a program (in a first step only BSc programs). In the sub-process "Recommend Study Program", the interested person is supported in choosing a program that matches his/her skills, interests and life-style. Also, the person can then participate in tests that enforce his/her choice. As soon as the interested person decides to register for the recommended program, the second sub-process, the "Program Registration" process, is triggered. 
-
-Sub-Process: "Recommend Study Program"
+Sub-Process: **Recommend Study Program Process**
 - Process Goals: Support prospective students in their program decision, eliminate programs from the choice that do not meet the basic requirment for the person (does not meet language requirement, does not meet requirement for full-time/part-time program), 
 - Inputs: form "Possbility Questionnaire", form "Recommendation Questionnaire", discretionary tasks (Loop) "Skills Tests"
 - Outputs: List of possible programs, list of program recommendations, test results
 
-Sub-Process: "Program Registration"
+Sub-Process: **Program Registration**
 - Process Goals: Registration for program, check eligibility, payment of registration fee, add profile to EVENTO, discretionary task: interview
 - Inputs: form "Program Registration", submit required documents (not digital), registration fee payment
 - Outputs: program registration
