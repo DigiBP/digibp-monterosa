@@ -1,6 +1,7 @@
 ﻿# FHNW School of Business Onboarding Process #
 
 Authors: Fabian Feiler, Lia Flück, Daniel Horn, Puneeth Krishna Suresh, Daniel Werner
+
 digibp-monterosa
 
 
