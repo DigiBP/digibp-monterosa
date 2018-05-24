@@ -1,29 +1,21 @@
-﻿# digibp-monterosa
+﻿# FHNW School of Business Onboarding Process #
 
-## FHNW School of Business Onboarding Process ##
+Authors: Fabian Feiler, Lia Flück, Daniel Horn, Puneeth Krishna Suresh, Daniel Werner
+digibp-monterosa
 
-#### Authors: Fabian Feiler, Lia Flück, Daniel Horn, Puneeth Krishna Suresh, Daniel Werner ####
 
 ## Introduction ##
 ### Motivation ###
 ### Vision ###
 ### Project Organisation ###
 
+
+
+![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/Organisation.PNG)
+
+
 ## Process ##
 ### Process Description ###
-### Process Modell ###
-#### Task Types ####
-#### Event Types ####
-#### Users & Groups ####
-
-## Digitalisation ##
-### DMN ###
-### Services ###
-#### MS Excel ####
-#### ChatBot ####
-### Integration ###
-## Step by step Instruction ##
-
 
 The overall process that is digitised within this module is the **FHNW School of Business Onboarding Process**. 
 This process includes two sub-processes, the **Recommend Study Program process** and the **Program Registration Process**. 
@@ -53,14 +45,28 @@ Currently, there is only the sub-process "Program Registration" existant. There 
 Project "Recommend Study Programm":
 The project for the digitalization of the sub-process "Recomend Study Program" is done within the Module "Digitalization of Business Processes" of the MSc Business Information Systems program. The goal is to digitise the process through a workflow management system with some service integration.
 
-Further documentation (Github Submission):
-- Project Management
-- Strategic Process
+
+### Process Modell ###
+
 
 
 ![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/BPMN_Model.PNG)
 
 
-![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/Organisation.PNG)
+#### Task Types ####
+#### Event Types ####
+#### Users & Groups ####
+
+## Digitalisation ##
+### DMN ###
+### Services ###
+#### MS Excel ####
+#### ChatBot ####
+### Integration ###
+## Step by step Instruction ##
+
+
+
+
 
 
