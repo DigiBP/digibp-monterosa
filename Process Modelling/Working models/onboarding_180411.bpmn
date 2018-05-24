@@ -25,8 +25,8 @@
       <bpmn:outgoing>SequenceFlow_1stqaim</bpmn:outgoing>
     </bpmn:userTask>
     <bpmn:endEvent id="EndEvent_0a63vr7" name="End Event">
-      <bpmn:incoming>SequenceFlow_0wt3kfi</bpmn:incoming>
       <bpmn:incoming>SequenceFlow_066itio</bpmn:incoming>
+      <bpmn:incoming>SequenceFlow_0niok5v</bpmn:incoming>
     </bpmn:endEvent>
     <bpmn:startEvent id="StartEvent_1" name="Start Event" camunda:initiator="Demo">
       <bpmn:extensionElements>
@@ -49,7 +49,7 @@
       <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${decidequestionnaire == false}</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="SequenceFlow_0etpshl" sourceRef="ExclusiveGateway_0t7nkkg" targetRef="Task_08dx14m" />
-    <bpmn:sequenceFlow id="SequenceFlow_0wt3kfi" sourceRef="Task_08dx14m" targetRef="EndEvent_0a63vr7" />
+    <bpmn:sequenceFlow id="SequenceFlow_0wt3kfi" sourceRef="Task_08dx14m" targetRef="Task_1bnk202" />
     <bpmn:sequenceFlow id="SequenceFlow_1vtly9j" sourceRef="Task_0o025h8" targetRef="ExclusiveGateway_0t7nkkg" />
     <bpmn:userTask id="Task_0o025h8" name="Show BSc Programs and decide" camunda:assignee="demo">
       <bpmn:extensionElements>
@@ -184,6 +184,11 @@
       <bpmn:incoming>SequenceFlow_0m43gww</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_066itio</bpmn:outgoing>
     </bpmn:userTask>
+    <bpmn:sequenceFlow id="SequenceFlow_0niok5v" sourceRef="Task_1bnk202" targetRef="EndEvent_0a63vr7" />
+    <bpmn:serviceTask id="Task_1bnk202" name="Calculate recommendation">
+      <bpmn:incoming>SequenceFlow_0wt3kfi</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0niok5v</bpmn:outgoing>
+    </bpmn:serviceTask>
   </bpmn:process>
   <bpmn:message id="Message_0mi2vd8" name="BScprograms ${bachelorprogram}" />
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
@@ -199,9 +204,9 @@
         <dc:Bounds x="307" y="80" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="EndEvent_0a63vr7_di" bpmnElement="EndEvent_0a63vr7">
-        <dc:Bounds x="951" y="102" width="36" height="36" />
+        <dc:Bounds x="1111" y="102" width="36" height="36" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="943" y="79" width="52" height="13" />
+          <dc:Bounds x="1103" y="79" width="52" height="13" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="StartEvent_0wx26pf_di" bpmnElement="StartEvent_1">
@@ -250,10 +255,9 @@
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="SequenceFlow_0wt3kfi_di" bpmnElement="SequenceFlow_0wt3kfi">
         <di:waypoint x="927" y="269" />
-        <di:waypoint x="967" y="269" />
-        <di:waypoint x="969" y="138" />
+        <di:waypoint x="966" y="269" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="902" y="247.5" width="90" height="13" />
+          <dc:Bounds x="901.5" y="247.5" width="90" height="13" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="SequenceFlow_1vtly9j_di" bpmnElement="SequenceFlow_1vtly9j">
@@ -271,13 +275,24 @@
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="SequenceFlow_066itio_di" bpmnElement="SequenceFlow_066itio">
         <di:waypoint x="927" y="120" />
-        <di:waypoint x="951" y="120" />
+        <di:waypoint x="1111" y="120" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="939" y="98.5" width="0" height="13" />
+          <dc:Bounds x="974" y="98.5" width="90" height="13" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="UserTask_0tv06zx_di" bpmnElement="Task_03ibc94">
         <dc:Bounds x="827" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0niok5v_di" bpmnElement="SequenceFlow_0niok5v">
+        <di:waypoint x="1066" y="269" />
+        <di:waypoint x="1129" y="269" />
+        <di:waypoint x="1129" y="138" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1097.5" y="247.5" width="0" height="13" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="ServiceTask_1ac9w70_di" bpmnElement="Task_1bnk202">
+        <dc:Bounds x="966" y="229" width="100" height="80" />
       </bpmndi:BPMNShape>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>

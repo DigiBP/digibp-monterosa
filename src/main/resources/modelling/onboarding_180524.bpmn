@@ -1,0 +1,653 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="1.12.0">
+  <bpmn:process id="onboarding_180426" name="Program recommendation module" isExecutable="true">
+    <bpmn:sequenceFlow id="SequenceFlow_1fs2r0c" sourceRef="StartEvent_1" targetRef="Task_11pgyh7" />
+    <bpmn:userTask id="Task_11pgyh7" name="Fill in possibility questionnaire" camunda:assignee="demo">
+      <bpmn:extensionElements>
+        <camunda:formData>
+          <camunda:formField id="lastname" label="Last Name" type="string">
+            <camunda:validation>
+              <camunda:constraint name="required" />
+            </camunda:validation>
+          </camunda:formField>
+          <camunda:formField id="firstname" label="First Name" type="string" />
+          <camunda:formField id="email" label="E-Mail" type="string" />
+          <camunda:formField id="streetno" label="Street, no" type="string" />
+          <camunda:formField id="postcodeplace" label="Postcode, Place" type="string" />
+          <camunda:formField id="country" label="Country" type="string" />
+          <camunda:formField id="english" label="English skills above average?" type="boolean" />
+          <camunda:formField id="german" label="German is my mother tongue" type="boolean" />
+          <camunda:formField id="french" label="French is above average?" type="boolean" />
+          <camunda:formField id="workload" label="During my studies, I plan to work more than 20 %" type="boolean" />
+        </camunda:formData>
+      </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_1fs2r0c</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1stqaim</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:endEvent id="EndEvent_0a63vr7" name="End Event">
+      <bpmn:incoming>SequenceFlow_066itio</bpmn:incoming>
+      <bpmn:incoming>SequenceFlow_129p5qm</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:startEvent id="StartEvent_1" name="Start Event" camunda:initiator="Demo">
+      <bpmn:extensionElements>
+        <camunda:formData />
+      </bpmn:extensionElements>
+      <bpmn:outgoing>SequenceFlow_1fs2r0c</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:businessRuleTask id="Task_0fixu4n" name="Evaluate possible programs" camunda:resultVariable="bachelorprogram" camunda:decisionRef="Decision_13nyxhf">
+      <bpmn:incoming>SequenceFlow_1stqaim</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0keke7i</bpmn:outgoing>
+    </bpmn:businessRuleTask>
+    <bpmn:sequenceFlow id="SequenceFlow_1stqaim" sourceRef="Task_11pgyh7" targetRef="Task_0fixu4n" />
+    <bpmn:sequenceFlow id="SequenceFlow_0keke7i" sourceRef="Task_0fixu4n" targetRef="Task_0o025h8" />
+    <bpmn:exclusiveGateway id="ExclusiveGateway_0t7nkkg" default="SequenceFlow_0etpshl">
+      <bpmn:incoming>SequenceFlow_1vtly9j</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0m43gww</bpmn:outgoing>
+      <bpmn:outgoing>SequenceFlow_0etpshl</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:sequenceFlow id="SequenceFlow_0m43gww" sourceRef="ExclusiveGateway_0t7nkkg" targetRef="Task_03ibc94">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${decidequestionnaire == false}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="SequenceFlow_0etpshl" sourceRef="ExclusiveGateway_0t7nkkg" targetRef="Task_08dx14m" />
+    <bpmn:sequenceFlow id="SequenceFlow_1vtly9j" sourceRef="Task_0o025h8" targetRef="ExclusiveGateway_0t7nkkg" />
+    <bpmn:userTask id="Task_0o025h8" name="Show BSc Programs and decide" camunda:assignee="demo">
+      <bpmn:extensionElements>
+        <camunda:formData>
+          <camunda:formField id="bachelorprogram" label="Based on your selection, we recommend to apply to one of the following programs:" type="string">
+            <camunda:validation>
+              <camunda:constraint name="readonly" config="true" />
+            </camunda:validation>
+          </camunda:formField>
+          <camunda:formField id="decidequestionnaire" label="For a more precise recommendation, please click the button to take further test" type="boolean" />
+        </camunda:formData>
+      </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_0keke7i</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1vtly9j</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="Task_08dx14m" name="Fill in recommendation questionnaire" camunda:assignee="demo">
+      <bpmn:extensionElements>
+        <camunda:formData>
+          <camunda:formField id="description" label="Please rate the aspects below according to your personal interest" type="string" defaultValue="you can choose low, medium or high">
+            <camunda:validation>
+              <camunda:constraint name="readonly" config="true" />
+            </camunda:validation>
+          </camunda:formField>
+          <camunda:formField id="travel" label="Affinity to travel" type="enum">
+            <camunda:value id="Low" name="Low" />
+            <camunda:value id="Medium" name="Medium" />
+            <camunda:value id="High" name="High" />
+          </camunda:formField>
+          <camunda:formField id="language" label="Interest in foreign languages" type="enum">
+            <camunda:value id="Low" name="Low" />
+            <camunda:value id="Medium" name="Medium" />
+            <camunda:value id="High" name="High" />
+          </camunda:formField>
+          <camunda:formField id="cultural" label="Cultural curiosity" type="enum">
+            <camunda:value id="Low" name="Low" />
+            <camunda:value id="Medium" name="Medium" />
+            <camunda:value id="High" name="High" />
+          </camunda:formField>
+          <camunda:formField id="europeanculture" label="Interest in European cultures" type="enum">
+            <camunda:value id="Low" name="Low" />
+            <camunda:value id="Medium" name="Medium" />
+            <camunda:value id="High" name="High" />
+          </camunda:formField>
+          <camunda:formField id="internationalculture" label="Interest in internatonal cultures" type="enum">
+            <camunda:value id="Low" name="Low" />
+            <camunda:value id="Medium" name="Medium" />
+            <camunda:value id="High" name="High" />
+          </camunda:formField>
+          <camunda:formField id="mathlogic" label="Mathematics and logic thinking" type="enum">
+            <camunda:value id="Low" name="Low" />
+            <camunda:value id="Medium" name="Medium" />
+            <camunda:value id="High" name="High" />
+          </camunda:formField>
+          <camunda:formField id="socialleadership" label="Social studies and leadership" type="enum">
+            <camunda:value id="Low" name="Low" />
+            <camunda:value id="Medium" name="Medium" />
+            <camunda:value id="High" name="High" />
+          </camunda:formField>
+          <camunda:formField id="financeaccounting" label="Finance, Accounting and Controlling" type="enum">
+            <camunda:value id="Low" name="Low" />
+            <camunda:value id="Medium" name="Medium" />
+            <camunda:value id="High" name="High" />
+          </camunda:formField>
+          <camunda:formField id="itsoftware" label="IT, software and modelling language" type="enum">
+            <camunda:value id="Low" name="Low" />
+            <camunda:value id="Medium" name="Medium" />
+            <camunda:value id="High" name="High" />
+          </camunda:formField>
+          <camunda:formField id="moduleflexibility" label="Module flexibility" type="enum">
+            <camunda:value id="Low" name="Low" />
+            <camunda:value id="Medium" name="Medium" />
+            <camunda:value id="High" name="High" />
+          </camunda:formField>
+          <camunda:formField id="practicalexpintern" label="Practical experience (internship)" type="enum">
+            <camunda:value id="Low" name="Low" />
+            <camunda:value id="Medium" name="Medium" />
+            <camunda:value id="High" name="High" />
+          </camunda:formField>
+          <camunda:formField id="practicalexpprojects" label="Practical experience (projects)" type="enum">
+            <camunda:value id="Low" name="Low" />
+            <camunda:value id="Medium" name="Medium" />
+            <camunda:value id="High" name="High" />
+          </camunda:formField>
+          <camunda:formField id="financebanking" label="Finance, Banking" type="enum">
+            <camunda:value id="Low" name="Low" />
+            <camunda:value id="Medium" name="Medium" />
+            <camunda:value id="High" name="High" />
+          </camunda:formField>
+          <camunda:formField id="marketingcomm" label="Marketing, Communication" type="enum">
+            <camunda:value id="Low" name="Low" />
+            <camunda:value id="Medium" name="Medium" />
+            <camunda:value id="High" name="High" />
+          </camunda:formField>
+          <camunda:formField id="accountingauditing" label="Accounting, financial auditing" type="enum">
+            <camunda:value id="Low" name="Low" />
+            <camunda:value id="Medium" name="Medium" />
+            <camunda:value id="High" name="High" />
+          </camunda:formField>
+          <camunda:formField id="analyticsintelligence" label="Business Analysis, business intelligence" type="enum">
+            <camunda:value id="Low" name="Low" />
+            <camunda:value id="Medium" name="Medium" />
+            <camunda:value id="High" name="High" />
+          </camunda:formField>
+          <camunda:formField id="softwaredev" label="Software Development" type="enum">
+            <camunda:value id="Low" name="Low" />
+            <camunda:value id="Medium" name="Medium" />
+            <camunda:value id="High" name="High" />
+          </camunda:formField>
+          <camunda:formField id="hrmleadership" label="HRM, Leadership" type="enum">
+            <camunda:value id="Low" name="Low" />
+            <camunda:value id="Medium" name="Medium" />
+            <camunda:value id="High" name="High" />
+          </camunda:formField>
+          <camunda:formField id="entrepreneurship" label="Entrepreneurship, starting own business" type="enum">
+            <camunda:value id="Low" name="Low" />
+            <camunda:value id="Medium" name="Medium" />
+            <camunda:value id="High" name="High" />
+          </camunda:formField>
+          <camunda:formField id="internationalorg" label="International Organizations" type="enum">
+            <camunda:value id="Low" name="Low" />
+            <camunda:value id="Medium" name="Medium" />
+            <camunda:value id="High" name="High" />
+          </camunda:formField>
+          <camunda:formField id="swissorg" label="Swiss Organizations" type="enum">
+            <camunda:value id="Low" name="Low" />
+            <camunda:value id="Medium" name="Medium" />
+            <camunda:value id="High" name="High" />
+          </camunda:formField>
+        </camunda:formData>
+      </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_0etpshl</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_19taxtq</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:sequenceFlow id="SequenceFlow_066itio" sourceRef="Task_03ibc94" targetRef="EndEvent_0a63vr7" />
+    <bpmn:userTask id="Task_03ibc94" name="Say goodbye" camunda:assignee="demo">
+      <bpmn:extensionElements>
+        <camunda:formData>
+          <camunda:formField id="FormField_0mr5un0" label="Thank you for your interest. If you still want to take further tests, you can come back at any time." type="string" />
+        </camunda:formData>
+      </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_0m43gww</bpmn:incoming>
+      <bpmn:incoming>SequenceFlow_0yl5cv3</bpmn:incoming>
+      <bpmn:incoming>SequenceFlow_11g8cee</bpmn:incoming>
+      <bpmn:incoming>SequenceFlow_0vs99uz</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_066itio</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:sequenceFlow id="SequenceFlow_19taxtq" sourceRef="Task_08dx14m" targetRef="programrecommendation" />
+    <bpmn:serviceTask id="programrecommendation" name="Calculate program match" camunda:modelerTemplate="digibp.connector.http.body">
+      <bpmn:extensionElements>
+        <camunda:connector inout="">
+          <camunda:inputOutput>
+            <camunda:inputParameter name="url"><![CDATA[https://prod-36.westeurope.logic.azure.com:443/workflows/bc7c0e0aa4a244bfabc9d183f94e0622/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=I-LjNA4H45Eu1syznaWLjrgd-9f1_WGEQWe7wyLP0Us]]></camunda:inputParameter>
+            <camunda:inputParameter name="method">POST</camunda:inputParameter>
+            <camunda:inputParameter name="headers">
+              <camunda:map>
+                <camunda:entry key="Content-Type">application/json</camunda:entry>
+              </camunda:map>
+            </camunda:inputParameter>
+            <camunda:inputParameter name="payload">
+              <camunda:script scriptFormat="JavaScript"><![CDATA[var travel = execution.getVariable("travel");
+var language = execution.getVariable("language");
+var cultural = execution.getVariable("cultural");
+var europeanculture = execution.getVariable("europeanculture");
+var internationalculture = execution.getVariable("internationalculture");
+var mathlogic = execution.getVariable("mathlogic");
+var socialleadership = execution.getVariable("socialleadership");
+var financeaccounting = execution.getVariable("financeaccounting");
+var itsoftware = execution.getVariable("itsoftware");
+var moduleflexibility = execution.getVariable("moduleflexibility");
+var practicalexpintern = execution.getVariable("practicalexpintern");
+var practicalexpprojects = execution.getVariable("practicalexpprojects");
+var financebanking = execution.getVariable("financebanking");
+var marketingcomm = execution.getVariable("marketingcomm");
+var accountingauditing = execution.getVariable("accountingauditing");
+var analyticsintelligence = execution.getVariable("analyticsintelligence");
+var softwaredev = execution.getVariable("softwaredev");
+var hrmleadership = execution.getVariable("hrmleadership");
+var entrepreneurship = execution.getVariable("entrepreneurship");
+var internationalorg = execution.getVariable("internationalorg");
+var swissorg = execution.getVariable("swissorg");
+var out = { "travel":travel, "language":language, "cultural":cultural,"europeanculture":europeanculture, "internationalculture":internationalculture, "mathlogic":mathlogic, "socialleadership":socialleadership, "financeaccounting":financeaccounting, "itsoftware":itsoftware, "moduleflexibility":moduleflexibility, "practicalexpintern":practicalexpintern, "practicalexpprojects":practicalexpprojects, "financebanking":financebanking, "marketingcomm":marketingcomm, "accountingauditing":accountingauditing, "analyticsintelligence":analyticsintelligence, "softwaredev":softwaredev, "hrmleadership":hrmleadership, "entrepreneurship":entrepreneurship, "internationalorg":internationalorg, "swissorg":swissorg};
+JSON.stringify(out);]]></camunda:script>
+            </camunda:inputParameter>
+            <camunda:outputParameter name="processVariableResponse">
+              <camunda:script scriptFormat="JavaScript">response;</camunda:script>
+            </camunda:outputParameter>
+          </camunda:inputOutput>
+          <camunda:connectorId>http-connector</camunda:connectorId>
+        </camunda:connector>
+      </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_19taxtq</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0i8pwrm</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:sequenceFlow id="SequenceFlow_0i8pwrm" sourceRef="programrecommendation" targetRef="showfirstquestion" />
+    <bpmn:userTask id="showfirstquestion" name="Choose to show 1st match program" camunda:assignee="demo">
+      <bpmn:extensionElements>
+        <camunda:formData>
+          <camunda:formField id="chooseshowfirst" label="Do you want to see the most suitable BSc program?" type="boolean" />
+        </camunda:formData>
+      </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_0i8pwrm</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0d3kuv3</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:exclusiveGateway id="ExclusiveGateway_1bthxmc" default="SequenceFlow_15e8qm9">
+      <bpmn:incoming>SequenceFlow_0d3kuv3</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0yl5cv3</bpmn:outgoing>
+      <bpmn:outgoing>SequenceFlow_15e8qm9</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:sequenceFlow id="SequenceFlow_0d3kuv3" sourceRef="showfirstquestion" targetRef="ExclusiveGateway_1bthxmc" />
+    <bpmn:sequenceFlow id="SequenceFlow_0yl5cv3" sourceRef="ExclusiveGateway_1bthxmc" targetRef="Task_03ibc94">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${chooseshowfirst == false}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="SequenceFlow_15e8qm9" sourceRef="ExclusiveGateway_1bthxmc" targetRef="retrievefirst" />
+    <bpmn:serviceTask id="retrievefirst" name="Retrieve 1st match" camunda:modelerTemplate="digibp.connector.http.nobody">
+      <bpmn:extensionElements>
+        <camunda:connector inout="">
+          <camunda:inputOutput>
+            <camunda:inputParameter name="method">GET</camunda:inputParameter>
+            <camunda:inputParameter name="url">https://hook.integromat.com/xpmseezx1purxd6u9oectn3vua5kmfbk</camunda:inputParameter>
+            <camunda:outputParameter name="first">
+              <camunda:script scriptFormat="JavaScript"><![CDATA[object = JSON.parse(response);
+first = object.first;]]></camunda:script>
+            </camunda:outputParameter>
+          </camunda:inputOutput>
+          <camunda:connectorId>http-connector</camunda:connectorId>
+        </camunda:connector>
+      </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_15e8qm9</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0peeoup</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:sequenceFlow id="SequenceFlow_0peeoup" sourceRef="retrievefirst" targetRef="showfirstresult" />
+    <bpmn:userTask id="showfirstresult" name="Show 1st match" camunda:assignee="demo">
+      <bpmn:extensionElements>
+        <camunda:formData>
+          <camunda:formField id="first" label="The most suitable Bachelor program for you is:" type="string">
+            <camunda:validation>
+              <camunda:constraint name="readonly" config="true" />
+            </camunda:validation>
+          </camunda:formField>
+        </camunda:formData>
+      </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_0peeoup</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1fjq2aj</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="showsecondquestion" name="Choose to show 2nd match program" camunda:assignee="demo">
+      <bpmn:extensionElements>
+        <camunda:formData>
+          <camunda:formField id="chooseshowsecond" label="Do you want to see the 2nd most suitable BSc program?" type="boolean" />
+        </camunda:formData>
+      </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_1fjq2aj</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0zkdhvc</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:sequenceFlow id="SequenceFlow_1fjq2aj" sourceRef="showfirstresult" targetRef="showsecondquestion" />
+    <bpmn:exclusiveGateway id="ExclusiveGateway_0pelq2s" default="SequenceFlow_1bcqult">
+      <bpmn:incoming>SequenceFlow_0zkdhvc</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1bcqult</bpmn:outgoing>
+      <bpmn:outgoing>SequenceFlow_11g8cee</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:sequenceFlow id="SequenceFlow_0zkdhvc" sourceRef="showsecondquestion" targetRef="ExclusiveGateway_0pelq2s" />
+    <bpmn:serviceTask id="retrievesecond" name="Retrieve 2nd match" camunda:modelerTemplate="digibp.connector.http.nobody">
+      <bpmn:extensionElements>
+        <camunda:connector inout="">
+          <camunda:inputOutput>
+            <camunda:inputParameter name="url">https://hook.integromat.com/kjc3jj8u3wtyppkktxng84ldmothfo4y</camunda:inputParameter>
+            <camunda:inputParameter name="method">GET</camunda:inputParameter>
+            <camunda:outputParameter name="second">
+              <camunda:script scriptFormat="JavaScript"><![CDATA[object = JSON.parse(response);
+second = object.second;]]></camunda:script>
+            </camunda:outputParameter>
+          </camunda:inputOutput>
+          <camunda:connectorId>http-connector</camunda:connectorId>
+        </camunda:connector>
+      </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_1bcqult</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0t0h6ir</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:sequenceFlow id="SequenceFlow_1bcqult" sourceRef="ExclusiveGateway_0pelq2s" targetRef="retrievesecond" />
+    <bpmn:sequenceFlow id="SequenceFlow_11g8cee" sourceRef="ExclusiveGateway_0pelq2s" targetRef="Task_03ibc94">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${chooseshowsecond == false}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="SequenceFlow_0t0h6ir" sourceRef="retrievesecond" targetRef="showsecondresult" />
+    <bpmn:userTask id="showsecondresult" name="Show 2nd match" camunda:assignee="demo">
+      <bpmn:extensionElements>
+        <camunda:formData>
+          <camunda:formField id="second" label="The most suitable Bachelor program for you is:" type="string">
+            <camunda:validation>
+              <camunda:constraint name="readonly" config="true" />
+            </camunda:validation>
+          </camunda:formField>
+        </camunda:formData>
+      </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_0t0h6ir</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0scfdyg</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:sequenceFlow id="SequenceFlow_0scfdyg" sourceRef="showsecondresult" targetRef="showthirdquestion" />
+    <bpmn:userTask id="showthirdquestion" name="Choose to show 3rd match program" camunda:assignee="demo">
+      <bpmn:extensionElements>
+        <camunda:formData>
+          <camunda:formField id="chooseshowthird" label="Do you want to see the 3rd most suitable BSc program?" type="boolean" />
+        </camunda:formData>
+      </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_0scfdyg</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_04t5j39</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:exclusiveGateway id="ExclusiveGateway_0kk6ume" default="SequenceFlow_1cahnuz">
+      <bpmn:incoming>SequenceFlow_04t5j39</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0vs99uz</bpmn:outgoing>
+      <bpmn:outgoing>SequenceFlow_1cahnuz</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:sequenceFlow id="SequenceFlow_04t5j39" sourceRef="showthirdquestion" targetRef="ExclusiveGateway_0kk6ume" />
+    <bpmn:sequenceFlow id="SequenceFlow_0vs99uz" sourceRef="ExclusiveGateway_0kk6ume" targetRef="Task_03ibc94">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${chooseshowthird == false}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="SequenceFlow_1cahnuz" sourceRef="ExclusiveGateway_0kk6ume" targetRef="retrievethird" />
+    <bpmn:serviceTask id="retrievethird" name="Retrieve 3rd match" camunda:modelerTemplate="digibp.connector.http.nobody">
+      <bpmn:extensionElements>
+        <camunda:connector inout="">
+          <camunda:inputOutput>
+            <camunda:inputParameter name="url">https://hook.integromat.com/dlqrihq1obf7xhhq4iadb5lh51bxl3sy</camunda:inputParameter>
+            <camunda:inputParameter name="method">GET</camunda:inputParameter>
+            <camunda:outputParameter name="third">
+              <camunda:script scriptFormat="JavaScript"><![CDATA[object = JSON.parse(response);
+third = object.third;]]></camunda:script>
+            </camunda:outputParameter>
+          </camunda:inputOutput>
+          <camunda:connectorId>http-connector</camunda:connectorId>
+        </camunda:connector>
+      </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_1cahnuz</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1ffzwj3</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:sequenceFlow id="SequenceFlow_1ffzwj3" sourceRef="retrievethird" targetRef="showthirdresult" />
+    <bpmn:userTask id="showthirdresult" name="Show 3rd match" camunda:assignee="demo">
+      <bpmn:extensionElements>
+        <camunda:formData>
+          <camunda:formField id="third" label="The most suitable Bachelor program for you is:" type="string" />
+        </camunda:formData>
+      </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_1ffzwj3</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_129p5qm</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:sequenceFlow id="SequenceFlow_129p5qm" sourceRef="showthirdresult" targetRef="EndEvent_0a63vr7" />
+  </bpmn:process>
+  <bpmn:message id="Message_0mi2vd8" name="BScprograms ${bachelorprogram}" />
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="onboarding_180426">
+      <bpmndi:BPMNEdge id="SequenceFlow_1fs2r0c_di" bpmnElement="SequenceFlow_1fs2r0c">
+        <di:waypoint x="256" y="120" />
+        <di:waypoint x="307" y="120" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="236.5" y="99" width="90" height="12" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="UserTask_1fgzjd1_di" bpmnElement="Task_11pgyh7">
+        <dc:Bounds x="307" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="EndEvent_0a63vr7_di" bpmnElement="EndEvent_0a63vr7">
+        <dc:Bounds x="1892" y="102" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1884" y="79" width="52" height="13" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="StartEvent_0wx26pf_di" bpmnElement="StartEvent_1">
+        <dc:Bounds x="220" y="102" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="213" y="138" width="55" height="13" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BusinessRuleTask_19fchjc_di" bpmnElement="Task_0fixu4n">
+        <dc:Bounds x="446" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_1stqaim_di" bpmnElement="SequenceFlow_1stqaim">
+        <di:waypoint x="407" y="120" />
+        <di:waypoint x="446" y="120" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="426.5" y="98" width="0" height="13" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_0keke7i_di" bpmnElement="SequenceFlow_0keke7i">
+        <di:waypoint x="546" y="120" />
+        <di:waypoint x="589" y="120" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="522.5" y="98.5" width="90" height="13" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="ExclusiveGateway_0t7nkkg_di" bpmnElement="ExclusiveGateway_0t7nkkg" isMarkerVisible="true">
+        <dc:Bounds x="741" y="95" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="721" y="72" width="90" height="13" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0m43gww_di" bpmnElement="SequenceFlow_0m43gww">
+        <di:waypoint x="791" y="120" />
+        <di:waypoint x="1710" y="120" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1205.5" y="98.5" width="90" height="13" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_0etpshl_di" bpmnElement="SequenceFlow_0etpshl">
+        <di:waypoint x="766" y="145" />
+        <di:waypoint x="766" y="269" />
+        <di:waypoint x="827" y="269" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="736" y="200.5" width="90" height="13" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_1vtly9j_di" bpmnElement="SequenceFlow_1vtly9j">
+        <di:waypoint x="689" y="120" />
+        <di:waypoint x="741" y="120" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="670" y="98.5" width="90" height="13" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="UserTask_0xdh8mk_di" bpmnElement="Task_0o025h8">
+        <dc:Bounds x="589" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="UserTask_1ggbabr_di" bpmnElement="Task_08dx14m">
+        <dc:Bounds x="827" y="229" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_066itio_di" bpmnElement="SequenceFlow_066itio">
+        <di:waypoint x="1810" y="120" />
+        <di:waypoint x="1892" y="120" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1806" y="98.5" width="90" height="13" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="UserTask_0tv06zx_di" bpmnElement="Task_03ibc94">
+        <dc:Bounds x="1710" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_19taxtq_di" bpmnElement="SequenceFlow_19taxtq">
+        <di:waypoint x="927" y="269" />
+        <di:waypoint x="956" y="269" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="896.5" y="247.5" width="90" height="13" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="ServiceTask_0dgpsr1_di" bpmnElement="programrecommendation">
+        <dc:Bounds x="956" y="229" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0i8pwrm_di" bpmnElement="SequenceFlow_0i8pwrm">
+        <di:waypoint x="1056" y="269" />
+        <di:waypoint x="1082" y="269" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1024" y="247.5" width="90" height="13" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="UserTask_1nnfuph_di" bpmnElement="showfirstquestion">
+        <dc:Bounds x="1082" y="229" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ExclusiveGateway_1bthxmc_di" bpmnElement="ExclusiveGateway_1bthxmc" isMarkerVisible="true">
+        <dc:Bounds x="1220.379217273954" y="244" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1280.758434547908" y="262" width="0" height="13" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0d3kuv3_di" bpmnElement="SequenceFlow_0d3kuv3">
+        <di:waypoint x="1182" y="269" />
+        <di:waypoint x="1220" y="269" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1201" y="247" width="0" height="13" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_0yl5cv3_di" bpmnElement="SequenceFlow_0yl5cv3">
+        <di:waypoint x="1245" y="244" />
+        <di:waypoint x="1245" y="120" />
+        <di:waypoint x="1710" y="120" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1260" y="175.5" width="0" height="13" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_15e8qm9_di" bpmnElement="SequenceFlow_15e8qm9">
+        <di:waypoint x="1245" y="293" />
+        <di:waypoint x="1244" y="349" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1244.5" y="299.5" width="0" height="13" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="ServiceTask_0922wcg_di" bpmnElement="retrievefirst">
+        <dc:Bounds x="1195" y="349" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0peeoup_di" bpmnElement="SequenceFlow_0peeoup">
+        <di:waypoint x="1295" y="389" />
+        <di:waypoint x="1343" y="389" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1319" y="367.5" width="0" height="13" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="UserTask_0lfh9rp_di" bpmnElement="showfirstresult">
+        <dc:Bounds x="1343" y="349" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="UserTask_07abl3v_di" bpmnElement="showsecondquestion">
+        <dc:Bounds x="1343" y="460" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_1fjq2aj_di" bpmnElement="SequenceFlow_1fjq2aj">
+        <di:waypoint x="1393" y="429" />
+        <di:waypoint x="1393" y="460" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1408" y="437.5" width="0" height="13" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="ExclusiveGateway_0pelq2s_di" bpmnElement="ExclusiveGateway_0pelq2s" isMarkerVisible="true">
+        <dc:Bounds x="1478" y="475" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1538" y="493.5" width="0" height="13" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0zkdhvc_di" bpmnElement="SequenceFlow_0zkdhvc">
+        <di:waypoint x="1443" y="500" />
+        <di:waypoint x="1478" y="500" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1460.5" y="478.5" width="0" height="13" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="ServiceTask_0v4vi3y_di" bpmnElement="retrievesecond">
+        <dc:Bounds x="1453" y="586" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_1bcqult_di" bpmnElement="SequenceFlow_1bcqult">
+        <di:waypoint x="1503" y="525" />
+        <di:waypoint x="1503" y="586" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1518" y="548.5" width="0" height="13" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_11g8cee_di" bpmnElement="SequenceFlow_11g8cee">
+        <di:waypoint x="1503" y="475" />
+        <di:waypoint x="1503" y="120" />
+        <di:waypoint x="1710" y="120" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1518" y="291" width="0" height="13" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_0t0h6ir_di" bpmnElement="SequenceFlow_0t0h6ir">
+        <di:waypoint x="1553" y="626" />
+        <di:waypoint x="1603" y="626" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1578" y="604.5" width="0" height="13" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="UserTask_0m3yait_di" bpmnElement="showsecondresult">
+        <dc:Bounds x="1603" y="586" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0scfdyg_di" bpmnElement="SequenceFlow_0scfdyg">
+        <di:waypoint x="1653" y="666" />
+        <di:waypoint x="1653" y="698" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1668" y="675.5" width="0" height="13" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="UserTask_1q7pavw_di" bpmnElement="showthirdquestion">
+        <dc:Bounds x="1603" y="698" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ExclusiveGateway_0kk6ume_di" bpmnElement="ExclusiveGateway_0kk6ume" isMarkerVisible="true">
+        <dc:Bounds x="1735" y="713" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1795" y="731" width="0" height="13" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_04t5j39_di" bpmnElement="SequenceFlow_04t5j39">
+        <di:waypoint x="1703" y="738" />
+        <di:waypoint x="1735" y="738" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1719" y="716.5" width="0" height="13" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_0vs99uz_di" bpmnElement="SequenceFlow_0vs99uz">
+        <di:waypoint x="1760" y="713" />
+        <di:waypoint x="1760" y="160" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1775" y="429.5" width="0" height="13" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_1cahnuz_di" bpmnElement="SequenceFlow_1cahnuz">
+        <di:waypoint x="1760" y="763" />
+        <di:waypoint x="1760" y="810" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1775" y="780" width="0" height="13" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="ServiceTask_0kehozv_di" bpmnElement="retrievethird">
+        <dc:Bounds x="1710" y="810" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_1ffzwj3_di" bpmnElement="SequenceFlow_1ffzwj3">
+        <di:waypoint x="1810" y="850" />
+        <di:waypoint x="1860" y="850" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1835" y="828.5" width="0" height="13" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="UserTask_12nel96_di" bpmnElement="showthirdresult">
+        <dc:Bounds x="1860" y="810" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_129p5qm_di" bpmnElement="SequenceFlow_129p5qm">
+        <di:waypoint x="1910" y="810" />
+        <di:waypoint x="1910" y="138" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1925" y="467" width="0" height="13" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
