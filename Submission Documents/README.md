@@ -23,4 +23,9 @@ Outputs: program registration
 Currently, there is only the sub-process "Program Registration" existant. There is no support for prospective students to decide for a program. As the overall onboarding process is going through some changes and digitalization efforts, this is a good moment to re-design the process and add the sub-process of programm recommendations. 
 
 
-"Recommend Study Programm" digitised (to-be process):
+Project "Recommend Study Programm":
+The project for the digitalization of the sub-process "Recomend Study Program" is done within the Module "Digitalization of Business Processes" of the MSc Business Information Systems program. The goal is to digitise the process through a workflow management system with some service integration.
+
+Further documentation (Github Submission):
+- Project Management
+- Strategic Process
