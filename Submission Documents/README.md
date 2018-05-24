@@ -38,7 +38,7 @@ Further documentation (Github Submission):
 - Strategic Process
 
 
-![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/BPMN Model.PNG)
+![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/BPMN_Model.PNG)
 
 
 ![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/Organisation.PNG)
