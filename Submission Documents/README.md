@@ -36,3 +36,11 @@ The project for the digitalization of the sub-process "Recomend Study Program" i
 Further documentation (Github Submission):
 - Project Management
 - Strategic Process
+
+
+![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/BPMN Model.PNG)
+
+
+![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/Organisation.PNG)
+
+
