@@ -93,7 +93,7 @@ Within the process step fill in recommendaton questionnaire of the process model
 
 ![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/excel.png)
 
-
+Logic of the Google Sheet
 1. Camunda values are posted in column B [Questionnaire form data]
 2. For each Bachelor program, an ideal questionnaire-response was defined in relation with program heads.
 3. The prospective candidate’s questionnaire result is then compared to these pre-defined responses.
