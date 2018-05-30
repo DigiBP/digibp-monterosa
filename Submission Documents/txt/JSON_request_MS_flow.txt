@@ -1,0 +1,94 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+        "travel": {
+            "type": "string"
+        },
+        "language": {
+            "type": "string"
+        },
+        "cultural": {
+            "type": "string"
+        },
+        "europeanculture": {
+            "type": "string"
+        },
+        "internationalculture": {
+            "type": "string"
+        },
+        "mathlogic": {
+            "type": "string"
+        },
+        "socialleadership": {
+            "type": "string"
+        },
+        "financeaccounting": {
+            "type": "string"
+        },
+        "itsoftware": {
+            "type": "string"
+        },
+        "moduleflexibility": {
+            "type": "string"
+        },
+        "practicalexpintern": {
+            "type": "string"
+        },
+        "practicalexpprojects": {
+            "type": "string"
+        },
+        "financebanking": {
+            "type": "string"
+        },
+        "marketingcomm": {
+            "type": "string"
+        },
+        "accountingauditing": {
+            "type": "string"
+        },
+        "analyticsintelligence": {
+            "type": "string"
+        },
+        "softwaredev": {
+            "type": "string"
+        },
+        "hrmleadership": {
+            "type": "string"
+        },
+        "entrepreneurship": {
+            "type": "string"
+        },
+        "internationalorg": {
+            "type": "string"
+        },
+        "swissorg": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "travel",
+        "language",
+        "cultural",
+        "europeanculture",
+        "internationalculture",
+        "mathlogic",
+        "socialleadership",
+        "financeaccounting",
+        "itsoftware",
+        "moduleflexibility",
+        "practicalexpintern",
+        "practicalexpprojects",
+        "financebanking",
+        "marketingcomm",
+        "accountingauditing",
+        "analyticsintelligence",
+        "softwaredev",
+        "hrmleadership",
+        "entrepreneurship",
+        "internationalorg",
+        "swissorg"
+    ]
+}
+
+Response: Status 200
