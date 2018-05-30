@@ -77,11 +77,11 @@ The project for the digitalization of the sub-process "Recomend Study Program" i
 
 Within the first process step according to the process model, a user is going to fill in a questionnaire. Based on the input data of this questionnaire and the study regulation a preselection of possible study programms is made by a DMN (Decision Model and Notation). The following DRD (Decision Requirement Diagram) shows the relation of the input data for the DMN.
 
-![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/DRD_BSc_program.PNG)
+![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/DRD_BSc_program.png)
 
 The determined business rules have been applied within a DMN in order to execute a preselection of a study program. The following DMN shows the determined business ruls.
 
-![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/DMN_BSc_program.PNG)
+![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/DMN_BSc_program.png)
 
 ### Services ###
 #### MS Excel ####
