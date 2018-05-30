@@ -54,7 +54,7 @@
           <text>false</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0hbzg2l">
-          <text><![CDATA["IBM, IM, BOEK, WI, BIT"]]></text>
+          <text>"IBM, IM, BOEK, WI, BIT"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0j5op9e">
@@ -71,7 +71,7 @@
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1hm7paq">
-          <text><![CDATA["WI, BOEK"]]></text>
+          <text>"WI, BOEK"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0rzje2l">
@@ -88,7 +88,7 @@
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0c1mo20">
-          <text><![CDATA["IM, BOEK, WI, BIT"]]></text>
+          <text>"IM, BOEK, WI, BIT"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_16w85xw">
@@ -105,7 +105,7 @@
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1flrpji">
-          <text><![CDATA["You cannot take any programs"]]></text>
+          <text>"You cannot take any programs"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0cbp7rs">
@@ -122,7 +122,7 @@
           <text>true</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0lewiyp">
-          <text><![CDATA["IM, BOEK, WI, BIT"]]></text>
+          <text>"IM, BOEK, WI, BIT"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0in6ykc">
@@ -139,7 +139,7 @@
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0e55izt">
-          <text><![CDATA["IM, BIT"]]></text>
+          <text>"IM, BIT"</text>
         </outputEntry>
       </rule>
     </decisionTable>
