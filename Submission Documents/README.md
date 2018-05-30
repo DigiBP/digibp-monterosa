@@ -130,7 +130,7 @@ Microsoft Flow has been appllied in order to post the input data from the questi
 
 JSON-Request to post the data looks as follow:
 
-[a link](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/txt/JSON_request_MS_flow.txt)
+[Link JSON-Request](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/txt/JSON_request_MS_flow.txt)
 
 
 #### Integromat ####
