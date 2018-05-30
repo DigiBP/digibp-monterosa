@@ -151,7 +151,7 @@ The same applies for “second” and “third” program. Both invoked separate
 
 ## Step by step Instruction ##
 
-1. Open following files in ([this folder](https://github.com/DigiBP/digibp-monterosa/tree/master/src/main/resources/modelling)) with the Camunda Modeler:
+1. Open following files in [this folder](https://github.com/DigiBP/digibp-monterosa/tree/master/src/main/resources/modelling) with the Camunda Modeler:
    - DMN_BSc program_180524.dmn
    - onboarding_180528.bpmn
    
@@ -159,7 +159,7 @@ The same applies for “second” and “third” program. Both invoked separate
 
 ![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/1.deploy_process.gif)
 
-3. Open ([Heroku] (http://heroku.com)) and sign-in.
+3. Open ([Heroku](http://heroku.com) and sign-in.
 
 4. Go to "Deploy" and click on "Deploy Branch"
 
