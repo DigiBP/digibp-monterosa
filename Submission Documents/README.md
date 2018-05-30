@@ -84,7 +84,28 @@ The determined business rules have been applied within a DMN in order to execute
 ![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/DMN_BSc_program.png)
 
 ### Services ###
-#### MS Excel ####
+
+The following services habe been implemented into the process.
+
+#### Google Sheets ####
+
+Within the process step fill in recommendaton questionnaire of the process model a user is going to fill in form. The data from this form is posted in a Google Sheets file. The objective of the Google sheet is to calculate the best match of a study programm. The following image shows a screenshot of the Google Sheet. 
+
+![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/excel.png)
+
+
+1. Camunda values are posted in column B [Questionnaire form data]
+2. For each Bachelor program, an ideal questionnaire-response was defined in relation with program heads.
+3. The prospective candidate’s questionnaire result is then compared to these pre-defined responses.
+4. Ranking is based on “Olympic Medal-Model”:
+   First:
+     -	highest number of perfect matches
+     -	in case of tie: higher number of only one deviation
+     -	in case of tie: higher number of only two deviations
+     -  and so on
+     Same for second and third.
+5. In the cells A36 to B38 the 3 best matches of study programs will be displayed.
+
 #### ChatBot ####
 ### Integration ###
 ## Step by step Instruction ##
