@@ -159,7 +159,7 @@ The same applies for “second” and “third” program. Both invoked separate
 
 ![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/1.deploy_process.gif)
 
-3. Open ([Heroku](http://heroku.com) and sign-in.
+3. Open [Heroku](http://heroku.com) and sign-in.
 
 4. Go to "Deploy" and click on "Deploy Branch"
 
@@ -173,6 +173,25 @@ The same applies for “second” and “third” program. Both invoked separate
 
 ![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/4.LogInCamunda.png)
 
+7. Start the process "Evaluate possible programs"
+
+![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/5.StartProcess.gif)
+
+8. Fill in the form
+
+![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/6.form.gif)
+
+9. Display results
+
+![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/7.DisplayRecommendation.gif)
+
+10. Continue next test
+
+![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/8.ContinueNextTest.gif)
+
+11. Fill in recommendation questionnaire
+
+![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/9.Form2.gif)
 
 ## Problems & Lessons Learned ##
 
