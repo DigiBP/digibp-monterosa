@@ -129,100 +129,8 @@ Microsoft Flow has been appllied in order to post the input data from the questi
 
 
 JSON-Request to post the data looks as follow:
-{
-    "$schema": "http://json-schema.org/draft-04/schema#",
-    "type": "object",
-    "properties": {
-        "travel": {
-            "type": "string"
-        },
-        "language": {
-            "type": "string"
-        },
-        "cultural": {
-            "type": "string"
-        },
-        "europeanculture": {
-            "type": "string"
-        },
-        "internationalculture": {
-            "type": "string"
-        },
-        "mathlogic": {
-            "type": "string"
-        },
-        "socialleadership": {
-            "type": "string"
-        },
-        "financeaccounting": {
-            "type": "string"
-        },
-        "itsoftware": {
-            "type": "string"
-        },
-        "moduleflexibility": {
-            "type": "string"
-        },
-        "practicalexpintern": {
-            "type": "string"
-        },
-        "practicalexpprojects": {
-            "type": "string"
-        },
-        "financebanking": {
-            "type": "string"
-        },
-        "marketingcomm": {
-            "type": "string"
-        },
-        "accountingauditing": {
-            "type": "string"
-        },
-        "analyticsintelligence": {
-            "type": "string"
-        },
-        "softwaredev": {
-            "type": "string"
-        },
-        "hrmleadership": {
-            "type": "string"
-        },
-        "entrepreneurship": {
-            "type": "string"
-        },
-        "internationalorg": {
-            "type": "string"
-        },
-        "swissorg": {
-            "type": "string"
-        }
-    },
-    "required": [
-        "travel",
-        "language",
-        "cultural",
-        "europeanculture",
-        "internationalculture",
-        "mathlogic",
-        "socialleadership",
-        "financeaccounting",
-        "itsoftware",
-        "moduleflexibility",
-        "practicalexpintern",
-        "practicalexpprojects",
-        "financebanking",
-        "marketingcomm",
-        "accountingauditing",
-        "analyticsintelligence",
-        "softwaredev",
-        "hrmleadership",
-        "entrepreneurship",
-        "internationalorg",
-        "swissorg"
-    ]
-}
 
-Response: Status 200
+[a link](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/txt/JSON_request_MS_flow.txt)
 
 
 #### Integromat ####
@@ -236,6 +144,7 @@ Integromat has been appllied in order to get the study recommendation from Googl
 ![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/Integromat.png)
 
 The JSON for request the data looks as follow:
+
 ![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/Integromat_JSON.png)
 
 The same applies for “second” and “third” program. Both invoked separately by an own integromat scenario.
