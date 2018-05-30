@@ -151,6 +151,16 @@ The same applies for “second” and “third” program. Both invoked separate
 
 ## Step by step Instruction ##
 
+1. Open following files in this [this folder]([Link JSON-Request](https://github.com/DigiBP/digibp-monterosa/tree/master/src/main/resources/modelling) with the Camunda Modeler:
+   - DMN_BSc program_180524.dmn
+   - onboarding_180528.bpmn
+   
+2. Deploy both files within the Camunda Modler
+
+![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/1.deploy_process.gif)
+
+
+
 ## Problems & Lessons Learned ##
 
 
