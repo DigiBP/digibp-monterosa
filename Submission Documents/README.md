@@ -74,11 +74,132 @@ The project for the digitalization of the sub-process "Recomend Study Program" i
 
 ## Digitalisation ##
 ### DMN ###
+
+Within the first process step according to the process model, a user is going to fill in a questionnaire. Based on the input data of this questionnaire and the [study regulation](https://www.fhnw.ch/de/studium/wirtschaft) a preselection of possible study programms is made by a DMN (Decision Model and Notation). The following DRD (Decision Requirement Diagram) shows the relation of the input data for the DMN.
+
+![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/DRD_BSc_program.png)
+
+The determined business rules have been applied within a DMN in order to execute a preselection of a study program. The following DMN shows the determined business ruls.
+
+![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/DMN_BSc_program.png)
+
 ### Services ###
-#### MS Excel ####
+
+The following services habe been implemented into the process.
+
+#### Google Sheets ####
+
+Within the process step fill in recommendaton questionnaire of the process model a user is going to fill in form. The data from this form is posted in a Google Sheets file. The objective of the Google sheet is to calculate the best match of a study programm. The following image shows a screenshot of the Google Sheet. 
+
+![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/excel.png)
+
+Logic of the Google Sheet:
+1. Camunda values are posted in column B [Questionnaire form data]
+2. For each Bachelor program, an ideal questionnaire-response was defined in relation with program heads.
+3. The prospective candidate’s questionnaire result is then compared to these pre-defined responses.
+4. Ranking is based on “Olympic Medal-Model”:
+   First:
+     -	highest number of perfect matches
+     -	in case of tie: higher number of only one deviation
+     -	in case of tie: higher number of only two deviations
+     -  and so on
+     Same for second and third.
+5. In the cells A36 to B38 an output containing the 3 best matches of study programs will be displayed.
+
 #### ChatBot ####
+
 ### Integration ###
+
+For the integration of the services Microsoft Flow and Integromat have been used.
+
+#### Microsoft Flow ####
+
+Microsoft Flow has been appllied in order to post the input data from the questionnaire to the Google Sheets.
+
+- Service Task REST with Body
+- URL: [MS Flow HTML request]
+- Method: POST
+- Headers: Content-Type:application/json
+- Payload: form field variables
+
+
+![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/MS_flow_1.png)
+...
+![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/MS_flow_2.png)
+
+
+JSON-Request to post the data looks as follow:
+
+[Link JSON-Request](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/txt/JSON_request_MS_flow.txt)
+
+
+#### Integromat ####
+
+Integromat has been appllied in order to get the study recommendation from Google Sheets.
+
+- Service Task REST without Body
+- URL: [Integromat webhook]
+- Method: GET
+
+![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/Integromat.png)
+
+The JSON for request the data looks as follow:
+
+![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/Integromat_JSON.png)
+
+The same applies for “second” and “third” program. Both invoked separately by an own integromat scenario.
+
 ## Step by step Instruction ##
+
+1. Open following files in [this folder](https://github.com/DigiBP/digibp-monterosa/tree/master/src/main/resources/modelling) with the Camunda Modeler:
+   - DMN_BSc program_180524.dmn
+   - onboarding_180528.bpmn
+   
+2. Deploy both files within the Camunda Modler
+
+![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/1.deploy_process.gif)
+
+3. Open [Heroku](http://heroku.com) and sign-in.
+
+4. Go to "Deploy" and click on "Deploy Branch"
+
+![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/2.deploy_branch.png)
+
+5. Open the app
+
+![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/3.OpenApp.png)
+
+6. Log in to Camunda
+
+![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/4.LogInCamunda.png)
+
+7. Start the process "Program recommendation module"
+
+![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/5.StartProcess.gif)
+
+8. Fill in the form
+
+![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/6.form.gif)
+
+9. Display results
+
+![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/7.DisplayRecommendation.gif)
+
+10. Fill in recommendation questionnaire
+
+![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/9.Form2.gif)
+
+11. Evalutation of results 
+
+![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/10.Evaluation.gif)
+
+12. Show results
+
+![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/11.DisplayResult.gif)
+
+13. Further procedure and end of process
+
+![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/12.FurtherProcedure.gif)
 
 ## Problems & Lessons Learned ##
 
