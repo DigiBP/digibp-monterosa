@@ -173,7 +173,7 @@ The same applies for “second” and “third” program. Both invoked separate
 
 ![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/4.LogInCamunda.png)
 
-7. Start the process "Evaluate possible programs"
+7. Start the process "Program recommendation module"
 
 ![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/5.StartProcess.gif)
 
@@ -185,13 +185,21 @@ The same applies for “second” and “third” program. Both invoked separate
 
 ![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/7.DisplayRecommendation.gif)
 
-10. Continue next test
-
-![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/8.ContinueNextTest.gif)
-
-11. Fill in recommendation questionnaire
+10. Fill in recommendation questionnaire
 
 ![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/9.Form2.gif)
+
+11. Evalutation of results 
+
+![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/10.Evaluation.gif)
+
+12. Show results
+
+![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/11.DisplayResult.gif)
+
+13. Further procedure and end of process
+
+![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/12.FurtherProcedure.gif)
 
 ## Problems & Lessons Learned ##
 
