@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/1.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="Definitions_10x0pwc" name="DRD" namespace="http://camunda.org/schema/1.0/dmn">
+  <decision id="Decision_13nyxhf" name="Decision 1">
+    <extensionElements>
+      <biodi:bounds x="150" y="150" width="180" height="80" />
+      <biodi:edge source="InputData_18mbdum">
+        <biodi:waypoints x="234" y="287" />
+        <biodi:waypoints x="235" y="230" />
+      </biodi:edge>
+      <biodi:edge source="BusinessKnowledgeModel_16oqkmo">
+        <biodi:waypoints x="411" y="188" />
+        <biodi:waypoints x="330" y="186" />
+      </biodi:edge>
+    </extensionElements>
+    <informationRequirement>
+      <requiredInput href="#InputData_18mbdum" />
+    </informationRequirement>
+    <knowledgeRequirement>
+      <requiredKnowledge href="#BusinessKnowledgeModel_16oqkmo" />
+    </knowledgeRequirement>
+    <decisionTable id="decisionTable_1">
+      <input id="input_1" label="English" camunda:inputVariable="english">
+        <inputExpression id="inputExpression_1" typeRef="string" expressionLanguage="">
+          <text></text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1o1kyw7" label="French" camunda:inputVariable="french">
+        <inputExpression id="LiteralExpression_1iihcw7" typeRef="string">
+          <text></text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0iwfbpq" label="German" camunda:inputVariable="german">
+        <inputExpression id="LiteralExpression_1letqs8" typeRef="string">
+          <text></text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0gklnh4" label="Workload" camunda:inputVariable="workload">
+        <inputExpression id="LiteralExpression_0jni8w7" typeRef="string">
+          <text></text>
+        </inputExpression>
+      </input>
+      <output id="output_1" label="Program" typeRef="string" />
+      <rule id="DecisionRule_0zwv1u7">
+        <inputEntry id="UnaryTests_0qw0z78">
+          <text><![CDATA["Yes"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1difhrx">
+          <text><![CDATA["Yes"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0omk91z">
+          <text><![CDATA["Yes"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_04arb4d">
+          <text><![CDATA["No"]]></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0hbzg2l">
+          <text><![CDATA["IBM, IM, BOEK, WI, BIT"]]></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0j5op9e">
+        <inputEntry id="UnaryTests_10m3qjg">
+          <text><![CDATA["No"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1jk2pyu">
+          <text><![CDATA["No"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_04jjon6">
+          <text><![CDATA["Yes"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0kt67n7">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1hm7paq">
+          <text><![CDATA["WI, BOEK"]]></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0rzje2l">
+        <inputEntry id="UnaryTests_0skx46x">
+          <text><![CDATA["Yes"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0qakc2q">
+          <text><![CDATA["No"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_06xr15l">
+          <text><![CDATA["Yes"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_09hhgp8">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0c1mo20">
+          <text><![CDATA["IM, BOEK, WI, BIT"]]></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_16w85xw">
+        <inputEntry id="UnaryTests_0e00u6v">
+          <text><![CDATA["No"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0rzon6f">
+          <text><![CDATA["No"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1gc89nd">
+          <text><![CDATA["No"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ubrxsl">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1flrpji">
+          <text><![CDATA["You cannot take any programs"]]></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0cbp7rs">
+        <inputEntry id="UnaryTests_1gv4kt6">
+          <text><![CDATA["Yes"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_10s3ftq">
+          <text><![CDATA["Yes"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ujm64c">
+          <text><![CDATA["Yes"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ec0ul4">
+          <text><![CDATA["Yes"]]></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0lewiyp">
+          <text><![CDATA["IM, BOEK, WI, BIT"]]></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0in6ykc">
+        <inputEntry id="UnaryTests_07gltey">
+          <text><![CDATA["Yes"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0pt3een">
+          <text><![CDATA["Yes"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1lovnma">
+          <text><![CDATA["No"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0slt4c6">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0e55izt">
+          <text><![CDATA["IM, BIT"]]></text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <inputData id="InputData_18mbdum" name="Results from possiblity questionnaire">
+    <extensionElements>
+      <biodi:bounds x="171" y="287" width="125" height="45" />
+    </extensionElements>
+  </inputData>
+  <businessKnowledgeModel id="BusinessKnowledgeModel_16oqkmo" name="Study regulation">
+    <extensionElements>
+      <biodi:bounds x="411" y="166" width="135" height="46" />
+    </extensionElements>
+  </businessKnowledgeModel>
+  <knowledgeSource id="KnowledgeSource_1j0667j" name="Online questionnaire">
+    <extensionElements>
+      <biodi:bounds x="419" y="280" width="100" height="63" />
+      <biodi:edge source="InputData_18mbdum">
+        <biodi:waypoints x="296" y="311" />
+        <biodi:waypoints x="419" y="312" />
+      </biodi:edge>
+    </extensionElements>
+    <authorityRequirement>
+      <requiredInput href="#InputData_18mbdum" />
+    </authorityRequirement>
+  </knowledgeSource>
+</definitions>
