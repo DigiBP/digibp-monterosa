@@ -85,7 +85,7 @@ The determined business rules have been applied within a DMN in order to execute
 
 ### Services ###
 
-The following services habe been implemented into the process.
+The following services habe been implemented into the process, but only Google Sheets is connected as due to it higher user friendliness.
 
 #### Google Sheets ####
 
