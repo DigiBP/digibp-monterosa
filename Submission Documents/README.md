@@ -63,14 +63,14 @@ The project for the digitalization of the sub-process "Recomend Study Program" i
 
 ### Process Modell ###
 
+The following picture illustrates the complete designed process:
+
+![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/Process_Camunda.PNG)
+
+The process starts with the prospective candidate, that visits the created wordpress-website and clicks on the study recommondation 
+link. This link forwardes the user to the first google-form where 
 
 
-![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/BPMN_Model.PNG)
-
-
-#### Task Types ####
-#### Event Types ####
-#### Users & Groups ####
 
 ## Digitalisation ##
 ### DMN ###
