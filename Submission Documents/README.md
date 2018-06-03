@@ -65,7 +65,7 @@ The project for the digitalization of the sub-process "Recomend Study Program" i
 
 The following picture illustrates the complete designed process:
 
-![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/Process_Camunda.PNG)
+![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/Process_Camunda.png)
 
 The process starts with the prospective candidate, that visits the created wordpress-website and clicks on the study recommondation 
 link. This link forwardes the user to the first google-form where 
