@@ -24,7 +24,7 @@ Matching a prospective student with the best fitting study program to foster the
 
 ### Project Organisation ###
 
-
+The project **digitalization of the FHNW School of Business Onboarding Process** is split into two sub-projects. The program registration project is managed within th FHNW School of Business organization. Its planned go-live is in spring 2019 and includes an online registration of the pogram through the tool ONLA that closely connected to EVENTO, the schools students management system. The sub-project **recommend study program** is implemented within the module **Digitalization of Business Processes** within the MSc Business Information Systems program. The project goal is the implementation of a workflow management system that supports students to decide for a study program that matches their skills and preferences. This sub-project is implemented within the spring semester 2018. In the following project overview the outline of the sub-project is shown. The implementation of certain parts go in line with the lectures in the module. 
 
 ![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/Organisation.PNG)
 
