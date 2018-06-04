@@ -70,6 +70,15 @@ The following picture illustrates the complete designed process:
 The process starts with the prospective candidate, that visits the created wordpress-website and clicks on the study recommondation 
 link. This link forwardes the user to the first google-form where 
 
+#### Task Types ####
+![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/Task_Types.png)
+
+#### Event Types ####
+![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/Event_Types.png)
+
+#### User & Groups ####
+![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/User.png)
+
 
 
 ## Digitalisation ##
