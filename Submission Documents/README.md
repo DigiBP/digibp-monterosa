@@ -10,9 +10,9 @@ digibp-monterosa
 
 ### Motivation ###
 
-All students of the FHNW School of Business have gone through one big decision. What is the optimal degree program for one's interests, skills and career prospectives? What are the differences and specialities of the different programs? What are the basic criteria for a program? Many students have given feedback that they wish more support of these decisions from the school. The sub-process **Recommend Study Program** of the overall **FHNW School of Business Onboarding Process** solve this problem by providing a digitised workflow that leads students interactively through finding the answers to this questions.
+All students of the FHNW School of Business have gone through one big decision. What is the optimal degree program for one's interests, skills and career prospective? What are the differences and specialties of the different programs? What are the basic criteria for a program? Many students have given feedback that they wish more support of these decisions from the school. The sub-process **Recommend Study Program** of the overall **FHNW School of Business Onboarding Process** solve this problem by providing a digitized workflow that leads students interactively through finding the answers to these questions.
 
-As one of the group members of the digibp-monterosa team works for the FHNW School of Business and is the project manager of the digitalisation project of the sub-process **program registration** this is the perfect opportunity to introduce the new sub-process **Recommend study program**.
+As one of the group members of the digibp-monterosa team works for the FHNW School of Business and is the project manager of the digitalization project of the sub-process **program registration** this is the perfect opportunity to introduce the new sub-process **Recommend study program**.
 
 
 ### Vision ###
@@ -22,9 +22,9 @@ Vision:
 Matching a prospective student with the best fitting study program to foster the potential and satisfaction for students, study program, class environment and, therefore, as a consequence the society in economic and cultural aspects.
 
 
-### Project Organisation ###
+### Project Organization ###
 
-The project **digitalization of the FHNW School of Business Onboarding Process** is split into two sub-projects. The program registration project is managed within th FHNW School of Business organization. Its planned go-live is in spring 2019 and includes an online registration of the pogram through the tool ONLA that closely connected to EVENTO, the schools students management system. The sub-project **recommend study program** is implemented within the module **Digitalization of Business Processes** within the MSc Business Information Systems program. The project goal is the implementation of a workflow management system that supports students to decide for a study program that matches their skills and preferences. This sub-project is implemented within the spring semester 2018. In the following project overview the outline of the sub-project is shown. The implementation of certain parts go in line with the lectures in the module. 
+The project **digitalization of the FHNW School of Business Onboarding Process** is split into two sub-projects. The program registration project is managed within the FHNW School of Business organization. Its planned go-live is in spring 2019 and includes an online registration of the program through the tool ONLA that closely connected to EVENTO, the school's student management system. The sub-project **recommend study program** is implemented within the module **Digitalization of Business Processes** within the MSc Business Information Systems program. The project goal is the implementation of a workflow management system that supports students to decide for a study program that matches their skills and preferences. This sub-project is implemented within the spring semester 2018. In the following project overview, the outline of the sub-project is shown. The implementation of certain parts goes in line with the lectures in the module. 
 
 ![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/Organisation.PNG)
 
@@ -32,9 +32,9 @@ The project **digitalization of the FHNW School of Business Onboarding Process**
 ## Process ##
 ### Process Description ###
 
-The overall process that is digitised within this module is the **FHNW School of Business Onboarding Process**. 
+The overall process that is digitized within this module is the **FHNW School of Business Onboarding Process**. 
 This process includes two sub-processes, the **Recommend Study Program process** and the **Program Registration Process**. 
-As the **Program Registration process** is being digitised within an ongoing project by the School of Business, 
+As the **Program Registration process** is being digitized within an ongoing project by the School of Business, 
 the main focus in this module lies on the **Recommend Study Program process**.
 
 ![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/Processes.PNG)
@@ -43,8 +43,8 @@ the main focus in this module lies on the **Recommend Study Program process**.
 The FHNW school of Business Onboarding Process leads potential students of the School of Business from the first interest in being a student to the actual admission in a program (in a first step only BSc programs). In the sub-process **Recommend Study Program process**, the interested person is supported in choosing a program that matches his/her skills, interests and life-style. Also, the person can then participate in tests that enforce his/her choice. As soon as the interested person decides to register for the recommended program, the second sub-process, the **Program Registration process**, is triggered. 
 
 Sub-Process: **Recommend Study Program Process**
-- Process Goals: Support prospective students in their program decision, eliminate programs from the choice that do not meet the basic requirment for the person (does not meet language requirement, does not meet requirement for full-time/part-time program), 
-- Inputs: form "Possbility Questionnaire", form "Recommendation Questionnaire", discretionary tasks (Loop) "Skills Tests"
+- Process Goals: Support prospective students in their program decision, eliminate programs from the choice that do not meet the basic requirement for the person (does not meet language requirement, does not meet requirement for full-time/part-time program), 
+- Inputs: form "Possibility Questionnaire", form "Recommendation Questionnaire", discretionary tasks (Loop) "Skills Tests"
 - Outputs: List of possible programs, list of program recommendations, test results
 
 Sub-Process: **Program Registration**
@@ -54,11 +54,11 @@ Sub-Process: **Program Registration**
 
 
 "Recommend Study Program" as-is process:
-Currently, there is only the sub-process "Program Registration" existant. There is no support for prospective students to decide for a program. As the overall onboarding process is going through some changes and digitalization efforts, this is a good moment to re-design the process and add the sub-process of programm recommendations. 
+Currently, there is only the sub-process "Program Registration" existent. There is no support for prospective students to decide for a program. As the overall onboarding process is going through some changes and digitalization efforts, this is a good moment to re-design the process and add the sub-process of program recommendations. 
 
 
-Project "Recommend Study Programm":
-The project for the digitalization of the sub-process "Recomend Study Program" is done within the Module "Digitalization of Business Processes" of the MSc Business Information Systems program. The goal is to digitise the process through a workflow management system with some service integration.
+Project "Recommend Study Program":
+The project for the digitalization of the sub-process "Recommend Study Program" is done within the Module "Digitalization of Business Processes" of the MSc Business Information Systems program. The goal is to digitize the process through a workflow management system with some service integration.
 
 
 ### Process Modell ###
@@ -67,8 +67,8 @@ The following picture illustrates the complete designed process:
 
 ![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/Process_Camunda.png)
 
-The process starts with the prospective candidate, that visits the created wordpress-website and clicks on the study recommondation 
-link. This link forwardes the user to the first google-form where 
+The process starts with the prospective candidate, that visits the created WordPress website and clicks on the study recommendation 
+link. This link forwards the user to the first google-form where 
 
 #### Task Types ####
 ![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/Task_types.png)
@@ -81,14 +81,14 @@ link. This link forwardes the user to the first google-form where
 
 
 
-## Digitalisation ##
+## Digitalization ##
 ### DMN ###
 
-Within the first process step according to the process model, a user is going to fill in a questionnaire. Based on the input data of this questionnaire and the [study regulation](https://www.fhnw.ch/de/studium/wirtschaft) a preselection of possible study programms is made by a DMN (Decision Model and Notation). The following DRD (Decision Requirement Diagram) shows the relation of the input data for the DMN.
+Within the first process step according to the process model, a user is going to fill in a questionnaire. Based on the input data of this questionnaire and the [study regulation](https://www.fhnw.ch/de/studium/wirtschaft) a preselection of possible study programs is made by a DMN (Decision Model and Notation). The following DRD (Decision Requirement Diagram) shows the relation of the input data for the DMN.
 
 ![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/DRD_BSc_program.png)
 
-The determined business rules have been applied within a DMN in order to execute a preselection of a study program. The following DMN shows the determined business ruls.
+The determined business rules have been applied within a DMN in order to execute a preselection of a study program. The following DMN shows the determined business rules.
 
 ![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/DMN_BSc_program.png)
 
@@ -97,16 +97,16 @@ The determined business rules have been applied within a DMN in order to execute
 The following services have been implemented into the process:
 - Google Forms combined with a WordPress Website
 - Google Sheets
-- ChatBot
-Due to user friendliness, the ChatBot has not been connected. Instead Google Forms and Google Sheets have been conected to the process.
+- Chatbot
+Due to user friendliness, the Chatbot has not been connected. Instead Google Forms and Google Sheets have been connected to the process.
 
 #### Google Forms / WordPress Website ####
 
-As simple WordPress website has been created which is combined with Google Forms (see [URL](https://programrecommendation.wordpress.com)). This Website serves as a starting point of the process. The Google Forms has been linked with Responses in a Google Sheet. Google sheets runs a script when the Google Form is submitted ([see script](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/txt/Google_Sheets_rest_API_camunda.txt)). The script triggers the process to be started. The fist Task in the process is a Service Task, sending an e-mail to the user with the camunda invitation link.
+As simple WordPress website has been created which is combined with Google Forms (see [URL](https://programrecommendation.wordpress.com)). This Website serves as a starting point of the process. The Google Forms has been linked with Responses in a Google Sheet. Google sheets runs a script when the Google Form is submitted ([see script](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/txt/Google_Sheets_rest_API_camunda.txt)). The script triggers the process to be started. The first Task in the process is a Service Task, sending an e-mail to the user with the camunda invitation link.
 
 #### Google Sheets ####
 
-Within the process step fill in recommendaton questionnaire of the process model a user is going to fill in form. The data from this form is posted in a Google Sheets file. The objective of the Google sheet is to calculate the best match of a study programm. The following image shows a screenshot of the Google Sheet. 
+Within the process step fill in recommendation questionnaire of the process model a user is going to fill in form. The data from this form is posted in a Google Sheets file. The objective of the Google sheet is to calculate the best match of a study program. The following image shows a screenshot of the Google Sheet. 
 
 ![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/excel.png)
 
@@ -118,11 +118,11 @@ Logic of the Google Sheet:
      -	highest number of perfect matches
      -	in case of tie: higher number of only one deviation
      -	in case of tie: higher number of only two deviations
-     -  and so on
+     -    and so on
      Same for second and third.
 5. In the cells A36 to B38 an output containing the 3 best matches of study programs will be displayed.
 
-#### ChatBot ####
+#### Chatbot ####
 
 An initial effort of providing a more personalized function is provided to capture the preliminary details using a chat bot. This scenario is realized using Dialog Flow and Integromat. The values are stored in Spreadsheet using web hooks.
 
@@ -166,7 +166,7 @@ For the integration of the services Microsoft Flow and Integromat have been used
 
 ##### Microsoft Flow – POST: Sending of information e-mail 
 
-Microsoft flow has been used for sending an e-mail containing information concerning the study programm.
+Microsoft flow has been used for sending an e-mail containing information concerning the study program.
 
 - Service Task REST with Body
 - URL: [MS Flow HTML request]
@@ -184,7 +184,7 @@ JSON.stringify(out);
 
 ##### Microsoft Flow – POST: Sending of invitation e-mail
 
-A e-mail is going to be send to the user containing the camunda invitation link.
+An e-mail is going to be send to the user containing the camunda invitation link.
 
 - Service Task REST with Body
 - URL: [MS Flow HTML request]
@@ -202,7 +202,7 @@ JSON.stringify(out);
 
 ##### Microsoft Flow – POST Questionnaire Data to Google Sheets
 
-Microsoft Flow has been appllied in order to post the input data from the questionnaire to the Google Sheets.
+Microsoft Flow has been applied in order to post the input data from the questionnaire to the Google Sheets.
 
 - Service Task REST with Body
 - URL: [MS Flow HTML request]
@@ -245,7 +245,7 @@ The same applies for “second” and “third” program. Both invoked separate
 2. On the WordPress website press on "Click here!"
 ![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/1.website.png)
 
-3. Fill in the form. It is important to enter a valid e-mail adress, otherwise there is no possibility to send you an e-mail.
+3. Fill in the form. It is important to enter a valid e-mail address, otherwise there is no possibility to send you an e-mail.
 ![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/2.fill_in_the_form.png)
 
 ![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/2.fill_in_the_form2.png)
@@ -256,16 +256,16 @@ The same applies for “second” and “third” program. Both invoked separate
 5. Check your mail inbox, there you find the following mail. Click on the link in the mail.
 ![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/3.Mail_inbox.png)
 
-6. Login in the Camunda Modeler
+6. Login to Camunda 
 ![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/4.camund_sign_in.png)
 
-7. Click on "Check data" in the Camunda Modeler and a form appears with the data submitted via the form in step 3. Check the data an click on complete at the bottem right.
+7. Click on "Check data" in the Camunda and a form appears with the data submitted via the form in step 3. Check the data and click on complete at the bottom right.
 ![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/5.camunda_check_data.png)
 
 8. Click on "Show BSc Programs and decide"
 ![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/6.show_BSC.png)
 
-9. Based on the input trasnmitted via the form in step 3, a first recommendation of study program is displayed. For further procedure, click on "Complete".
+9. Based on the input transmitted via the form in step 3, a first recommendation of study program is displayed. For further procedure, click on "Complete".
 ![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/7.first_recommendation.png)
 
 10. Know click on the task "Fill in recommendation questionnaire". Fill in the form and press on complete.
@@ -279,10 +279,10 @@ First the best match is going to appear. Then click on "Complete".
 Then the second match. Then click on "Complete".
 ![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/10.second_match.png)
 
-And finally the third match. Then click on "Complete".
+And finally, the third match. Then click on "Complete".
 ![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/11.third_match.png)
 
-12. Finally the next step can be choosen.
+12. Finally, the next step can be chosen.
 ![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/12.next_step.png)
 
 13. Afterwards an e-mail has been sent with the corresponding information, depending on the choice made in step 12.
