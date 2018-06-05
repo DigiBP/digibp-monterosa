@@ -144,11 +144,13 @@ JSON-Request to post the data looks as follow:
 
 ##### Microsoft Flow – POST: Sending of information e-mail
 
-•	Service Task REST with Body
-•	URL: [MS Flow HTML request]
-•	Method: POST
-•	Headers: Content-Type:application/json
-•	Payload: 
+Microsoft flow has been used for sending an e-mail containing information concerning the study programm.
+
+- Service Task REST with Body
+- URL: [MS Flow HTML request]
+- Method: POST
+- Headers: Content-Type:application/json
+- Payload: 
 
 var email = execution.getVariable("email");
 var out = {"email":email};
@@ -160,11 +162,13 @@ JSON.stringify(out);
 
 ##### Microsoft Flow – POST: Sending of invitation e-mail
 
-•	Service Task REST with Body
-•	URL: [MS Flow HTML request]
-•	Method: POST
-•	Headers: Content-Type:application/json
-•	Payload: 
+Microsoft flow has been used for sending an e-mail containing inviation to the next process step.
+
+- Service Task REST with Body
+- URL: [MS Flow HTML request]
+- Method: POST
+- Headers: Content-Type:application/json
+- Payload: 
 
 var email = execution.getVariable("email");
 var out = {"email":email};
