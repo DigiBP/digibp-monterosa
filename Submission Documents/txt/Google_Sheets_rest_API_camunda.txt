@@ -1,0 +1,100 @@
+function Initialize() {
+
+  try {
+
+    var triggers = ScriptApp.getProjectTriggers();
+
+    for (var i in triggers)
+      ScriptApp.deleteTrigger(triggers[i]);
+
+    ScriptApp.newTrigger("SubmitGoogleFormData")
+      .forSpreadsheet(SpreadsheetApp.getActiveSpreadsheet())
+      .onFormSubmit().create();
+
+  } catch (error) {
+    throw new Error("Please add this code in the Google Spreadsheet");
+  }
+}
+
+
+function SubmitGoogleFormData(e) {
+
+  if (!e) {
+    throw new Error("Please go the Run menu and choose Initialize");
+  }
+
+  try {
+
+    // grab the columns
+    var
+      activeSheet = SpreadsheetApp.getActiveSheet(), // get the active sheet
+      lastRow = activeSheet.getLastRow(), // get the last row
+      firstname = activeSheet.getRange(lastRow, 2, 1, 1).getValue(), // column 2 First Name
+      lastname = activeSheet.getRange(lastRow, 3, 1, 1).getValue(), // column 3 Last Name
+      email = activeSheet.getRange(lastRow, 4, 1, 1).getValue(), // column 4 E-Mail
+      german = activeSheet.getRange(lastRow, 5, 1, 1).getValue(), // column 5 German Skills
+      english = activeSheet.getRange(lastRow, 6, 1, 1).getValue(), // column 6 English Skills
+      french = activeSheet.getRange(lastRow, 7, 1, 1).getValue(), // column 7 French Skills
+      workload = activeSheet.getRange(lastRow, 8, 1, 1).getValue(); // column 8 Workload
+
+    // put columns into API payload
+    var payload = {
+      "variables": {
+        "firstname": {
+          "value": String(firstname),
+          "type": "String"
+        },
+        "lastname": {
+          "value": String(lastname),
+          "type": "String"
+        },
+        "email": {
+          "value": String(email),
+          "type": "String"
+        },
+        "german": {
+          "value": String(german),
+          "type": "String"
+        },
+        "english": {
+          "value": String(english),
+          "type": "String"
+        },
+        "french": {
+          "value": String(french),
+          "type": "String"
+        },
+        "workload": {
+          "value": String(workload),
+          "type": "String"
+        }
+      }
+    }
+
+    // set header
+    var headers = {
+      "Content-Type": "application/json"
+    };
+
+    // build up options
+    var options = {
+      'method': 'POST',
+      "contentType": "application/json",
+      'headers': headers,
+      'payload': JSON.stringify(payload),
+      'muteHttpExceptions': false
+    }
+
+    // set URL
+var url = "https://digibp-monterosass2018.herokuapp.com/rest/process-definition/key/onboarding_180426/start";
+
+    // make the call
+    var response = UrlFetchApp.fetch(url, options);
+
+    // log the response (useful for debugging )
+    Logger.log(JSON.stringify(response));
+
+  } catch (error) {
+    Logger.log(error.toString());
+  }
+}
