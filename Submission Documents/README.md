@@ -94,11 +94,15 @@ The determined business rules have been applied within a DMN in order to execute
 
 ### Services ###
 
-The following services habe been implemented into the process, but due to user friendliness, the ChatBot has not been connected. Instead Google Forms and Google Sheets have been conected to the process.
+The following services have been implemented into the process:
+- Google Forms combined with a WordPress Website
+- Google Sheets
+- ChatBot
+Due to user friendliness, the ChatBot has not been connected. Instead Google Forms and Google Sheets have been conected to the process.
 
 #### Google Forms / WordPress Website ####
 
-As simple WordPress website has been created which serves as the starting point of the process (see [URL](https://programrecommendation.wordpress.com)). Google Forms has been linked with Responses in a Google Sheet (see next section). Therefore the link is available on the WordPress Website. Google sheets runs a script when the Google Form is submitted ([see script](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/txt/Google_Sheets_rest_API_camunda.txt)). The script triggers the process to be started. The fist Task in the process is a Service Task, sending an e-mail to the user with the camunda invitation link. 
+As simple WordPress website has been created which is combined with Google Forms (see [URL](https://programrecommendation.wordpress.com)). This Website serves as a starting point of the process. The Google Forms has been linked with Responses in a Google Sheet. Google sheets runs a script when the Google Form is submitted ([see script](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/txt/Google_Sheets_rest_API_camunda.txt)). The script triggers the process to be started. The fist Task in the process is a Service Task, sending an e-mail to the user with the camunda invitation link.
 
 #### Google Sheets ####
 
@@ -120,39 +124,7 @@ Logic of the Google Sheet:
 
 #### ChatBot ####
 
-An initial effort of providing a more personalized function is provided to capture the preliminary details using a chat bot. This scenario is realized using Dialog Flow and Integromat. The values are stored in Spreadsheet using web hooks.
-
-A brief description of the concept used to realize this is depicted below:
-
-- The Different Intents created and used to realize this Chat bot are shown below
-![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/chatbot1.png)
-
-- The Chat bot is triggered when the candidates provides “hi” or “hello” as a greeting message and the flow of communication is passed to the next intent. The concept used in creating this is an inline intent within the context of the existing intent as shown below:
-![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/chatbot2.png)
-
-- The entities in this case were Boolean values (yes or no), thus this example did not used any inbuilt entity and created four different entities for the Boolean values that we require.
-![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/chatbot3.png)
-
-- The value at each intent is captured and stored for that instance and passed on to the next so that at the end of the entire conversation, a combination of all captured values can be collected and passed on to Integromat for back end service integration (In our example a Google spreadsheet). An example of both the above-mentioned scenarios are shown below:
-
-![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/chatbot4.png)
-
-![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/chatbot5.png)
-
--Since this example demonstrated an inline intent, it is not required to enable a web-hook to call for each intent. The web hooks need to be enabled in Dialog Flow where the values of all the intents (Ex: Last Intent) is being captured as shown below:
-![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/chatbot6.png)
-
-- A scenario has to be created in integromat to capture the values from Dialog Flow and store it in the back end. This example demonstrates a simple example of web hooks and Google Spreadsheet as shown below:
-
-![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/chatbot7.png)
-
-- This has to be connected with Dialog Flow using a Web hooks URL and pasted in the Fulfilment stage of Dialog Flow.
-
-- Once this step is completed and run for a demo, all values communicated and captured in the chat bot would be sent to the Web hooks and in turn to each individual row on Google Spreadsheet as shown below:
-
-![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/chatbot8.png)
-
-![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/chatbot9.png)
+Next to Google Forms and Google Sheet a ChatBot has been implemented.
 
 ### Integration ###
 
@@ -160,7 +132,7 @@ For the integration of the services Microsoft Flow and Integromat have been used
 
 #### Microsoft Flow ####
 
-##### Microsoft Flow – POST: Sending of information e-mail
+##### Microsoft Flow – POST: Sending of information e-mail 
 
 Microsoft flow has been used for sending an e-mail containing information concerning the study programm.
 
@@ -233,6 +205,42 @@ The JSON for request the data looks as follow:
 ![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/Integromat_JSON.png)
 
 The same applies for “second” and “third” program. Both invoked separately by an own integromat scenario.
+
+##### Chatbot
+
+An initial effort of providing a more personalized function is provided to capture the preliminary details using a chat bot. This scenario is realized using Dialog Flow and Integromat. The values are stored in Spreadsheet using web hooks.
+
+A brief description of the concept used to realize this is depicted below:
+
+- The Different Intents created and used to realize this Chat bot are shown below
+![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/chatbot1.png)
+
+- The Chat bot is triggered when the candidates provides “hi” or “hello” as a greeting message and the flow of communication is passed to the next intent. The concept used in creating this is an inline intent within the context of the existing intent as shown below:
+![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/chatbot2.png)
+
+- The entities in this case were Boolean values (yes or no), thus this example did not used any inbuilt entity and created four different entities for the Boolean values that we require.
+![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/chatbot3.png)
+
+- The value at each intent is captured and stored for that instance and passed on to the next so that at the end of the entire conversation, a combination of all captured values can be collected and passed on to Integromat for back end service integration (In our example a Google spreadsheet). An example of both the above-mentioned scenarios are shown below:
+
+![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/chatbot4.png)
+
+![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/chatbot5.png)
+
+-Since this example demonstrated an inline intent, it is not required to enable a web-hook to call for each intent. The web hooks need to be enabled in Dialog Flow where the values of all the intents (Ex: Last Intent) is being captured as shown below:
+![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/chatbot6.png)
+
+- A scenario has to be created in integromat to capture the values from Dialog Flow and store it in the back end. This example demonstrates a simple example of web hooks and Google Spreadsheet as shown below:
+
+![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/chatbot7.png)
+
+- This has to be connected with Dialog Flow using a Web hooks URL and pasted in the Fulfilment stage of Dialog Flow.
+
+- Once this step is completed and run for a demo, all values communicated and captured in the chat bot would be sent to the Web hooks and in turn to each individual row on Google Spreadsheet as shown below:
+
+![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/chatbot8.png)
+
+![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/chatbot9.png)
 
 ## Step by step Instruction ##
 
