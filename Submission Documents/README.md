@@ -107,7 +107,6 @@ Logic of the Google Sheet:
 2. For each Bachelor program, an ideal questionnaire-response was defined in relation with program heads.
 3. The prospective candidate’s questionnaire result is then compared to these pre-defined responses.
 4. Ranking is based on “Olympic Medal-Model”:
-   First:
      -	highest number of perfect matches
      -	in case of tie: higher number of only one deviation
      -	in case of tie: higher number of only two deviations
