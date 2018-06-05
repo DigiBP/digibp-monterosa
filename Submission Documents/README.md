@@ -236,59 +236,53 @@ The same applies for “second” and “third” program. Both invoked separate
 
 ## Step by step Instruction ##
 
-1. Open following files in [this folder](https://github.com/DigiBP/digibp-monterosa/tree/master/src/main/resources/modelling) with the Camunda Modeler:
-   - DMN_BSc program_180524.dmn
-   - onboarding_180528.bpmn
-   
-2. Deploy both files within the Camunda Modler
+1. Press on [this link](https://programrecommendation.wordpress.com) to start the process and land on the WordPress website.
 
-![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/1.deploy_process.gif)
+2. On the WordPress website press on "Click here!"
+![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/1.website.png)
 
-3. Open [Heroku](http://heroku.com) and sign-in.
+3. Fill in the form. It is important to enter a valid e-mail adress, otherwise there is no possibility to send you an e-mail.
+![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/2.fill_in_the_form.png)
 
-4. Go to "Deploy" and click on "Deploy Branch"
+![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/2.fill_in_the_form2.png)
 
-![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/2.deploy_branch.png)
+4. Finally send the form.
+![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/2.fill_in_the_form3.png)
 
-5. Open the app
+5. Check your mail inbox, there you find the following mail. Click on the link in the mail.
+![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/3.Mail_inbox.png)
 
-![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/3.OpenApp.png)
+6. Login in the Camunda Modeler
+![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/4.camund_sign_in.png)
 
-6. Log in to Camunda
+7. Click on "Check data" in the Camunda Modeler and a form appears with the data submitted via the form in step 3. Check the data an click on complete at the bottem right.
+![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/5.camunda_check_data.png)
 
-![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/4.LogInCamunda.png)
+8. Click on "Show BSc Programs and decide"
+![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/6.show_BSC.png)
 
-7. Start the process "Program recommendation module"
+9. Based on the input trasnmitted via the form in step 3, a first recommendation of study program is displayed. For further procedure, click on "Complete".
+![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/7.first_recommendation.png)
 
-![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/5.StartProcess.gif)
+10. Know click on the task "Fill in recommendation questionnaire". Fill in the form and press on complete.
+![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/8.Fill_in_recommendation_questionnaire.png)
 
-8. Fill in the form
+11. Based on the input given via the form in step 10, the first three best matches are going to be displayed. 
 
-![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/6.form.gif)
+First the best match is going to appear. Then click on "Complete".
+![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/9.first_match.png)
 
-9. Display results
+Then the second match. Then click on "Complete".
+![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/10.second_match.png)
 
-![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/7.DisplayRecommendation.gif)
+And finally the third match. Then click on "Complete".
+![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/11.third_match.png)
 
-10. Fill in recommendation questionnaire
+12. Finally the next step can be choosen.
+![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/12.next_step.png)
 
-![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/9.Form2.gif)
+13. Afterwards an e-mail has been sent with the corresponding information, depending on the choice made in step 12.
+![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/13.confirm-mail.png)
 
-11. Evalutation of results 
-
-![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/10.Evaluation.gif)
-
-12. Show results
-
-![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/11.DisplayResult.gif)
-
-13. Further procedure and end of process
-
-![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/12.FurtherProcedure.gif)
-
-## Problems & Lessons Learned ##
-
-
-
-
-
+14. There should be an e-mail in your inbox. When selected in step 12. "I would like to receive the application form", the following link with the application form is going to be in your inbox. At this point the process ends.
+![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/14.mail_inbox_documents.png)
