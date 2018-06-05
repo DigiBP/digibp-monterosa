@@ -122,7 +122,7 @@ For the integration of the services Microsoft Flow and Integromat have been used
 
 #### Microsoft Flow ####
 
-##### Microsoft Flow – POST Questionnaire Data to Google Sheets #####
+##### Microsoft Flow – POST Questionnaire Data to Google Sheets
 
 Microsoft Flow has been appllied in order to post the input data from the questionnaire to the Google Sheets.
 
@@ -142,7 +142,7 @@ JSON-Request to post the data looks as follow:
 
 [Link JSON-Request](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/txt/JSON_request_MS_flow.txt)
 
-##### Microsoft Flow – POST: Sending of information e-mail #####
+##### Microsoft Flow – POST: Sending of information e-mail
 
 •	Service Task REST with Body
 •	URL: [MS Flow HTML request]
@@ -158,7 +158,7 @@ JSON.stringify(out);
 
 [Link JSON-Request](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/txt/JSON_request_sending_mail.txt)
 
-##### Microsoft Flow – POST: Sending of invitation e-mail #####
+##### Microsoft Flow – POST: Sending of invitation e-mail
 
 •	Service Task REST with Body
 •	URL: [MS Flow HTML request]
@@ -176,7 +176,7 @@ JSON.stringify(out);
 
 #### Integromat ####
 
-##### Integromat – GET program recommendation from Google Sheets ##### 
+##### Integromat – GET program recommendation from Google Sheets 
 
 Integromat has been appllied in order to get the study recommendation from Google Sheets.
 
