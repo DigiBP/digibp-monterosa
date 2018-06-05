@@ -94,7 +94,11 @@ The determined business rules have been applied within a DMN in order to execute
 
 ### Services ###
 
-The following services habe been implemented into the process, but only Google Sheets is connected as due to it higher user friendliness.
+The following services habe been implemented into the process, but due to user friendliness, the ChatBot has not been connected. Instead Google Forms and Google Sheets have been conected to the process.
+
+#### Google Forms / WordPress Website ####
+
+As simple WordPress website has been created which serves as the starting point of the process (see [URL](https://programrecommendation.wordpress.com)). Google Forms has been linked with Responses in a Google Sheet (see next section). Therefore the link is available on the WordPress Website. Google sheets runs a script when the Google Form is submitted ([see script](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/txt/Google_Sheets_rest_API_camunda.txt)). The script triggers the process to be startd. The fist Task in the process is a Service Task, sending an e-mail to the user with the camunda invitation link. 
 
 #### Google Sheets ####
 
@@ -121,26 +125,6 @@ Logic of the Google Sheet:
 For the integration of the services Microsoft Flow and Integromat have been used.
 
 #### Microsoft Flow ####
-
-##### Microsoft Flow – POST Questionnaire Data to Google Sheets
-
-Microsoft Flow has been appllied in order to post the input data from the questionnaire to the Google Sheets.
-
-- Service Task REST with Body
-- URL: [MS Flow HTML request]
-- Method: POST
-- Headers: Content-Type:application/json
-- Payload: form field variables
-
-
-![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/MS_flow_1.png)
-...
-![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/MS_flow_2.png)
-
-
-JSON-Request to post the data looks as follow:
-
-[Link JSON-Request](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/txt/JSON_request_MS_flow.txt)
 
 ##### Microsoft Flow – POST: Sending of information e-mail
 
@@ -177,6 +161,26 @@ JSON.stringify(out);
 ![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/post_sending_email_invitation.png)
 
 [Link JSON-Request](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/txt/JSON_request_sending_mail_invitation.txt)
+
+##### Microsoft Flow – POST Questionnaire Data to Google Sheets
+
+Microsoft Flow has been appllied in order to post the input data from the questionnaire to the Google Sheets.
+
+- Service Task REST with Body
+- URL: [MS Flow HTML request]
+- Method: POST
+- Headers: Content-Type:application/json
+- Payload: form field variables
+
+
+![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/MS_flow_1.png)
+...
+![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/MS_flow_2.png)
+
+
+JSON-Request to post the data looks as follow:
+
+[Link JSON-Request](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/txt/JSON_request_MS_flow.txt)
 
 #### Integromat ####
 
