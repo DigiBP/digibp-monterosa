@@ -134,6 +134,7 @@ A brief description of the concept used to realize this is depicted below:
 ![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/chatbot3.png)
 
 - The value at each intent is captured and stored for that instance and passed on to the next so that at the end of the entire conversation, a combination of all captured values can be collected and passed on to Integromat for back end service integration (In our example a Google spreadsheet). An example of both the above-mentioned scenarios are shown below:
+
 ![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/chatbot4.png)
 
 ![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/chatbot5.png)
@@ -141,6 +142,17 @@ A brief description of the concept used to realize this is depicted below:
 -Since this example demonstrated an inline intent, it is not required to enable a web-hook to call for each intent. The web hooks need to be enabled in Dialog Flow where the values of all the intents (Ex: Last Intent) is being captured as shown below:
 ![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/chatbot6.png)
 
+- A scenario has to be created in integromat to capture the values from Dialog Flow and store it in the back end. This example demonstrates a simple example of web hooks and Google Spreadsheet as shown below:
+
+![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/chatbot7.png)
+
+- This has to be connected with Dialog Flow using a Web hooks URL and pasted in the Fulfilment stage of Dialog Flow.
+
+- Once this step is completed and run for a demo, all values communicated and captured in the chat bot would be sent to the Web hooks and in turn to each individual row on Google Spreadsheet as shown below:
+
+![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/chatbot8.png)
+
+![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/chatbot9.png)
 
 ### Integration ###
 
