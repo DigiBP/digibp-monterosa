@@ -98,7 +98,7 @@ The following services habe been implemented into the process, but due to user f
 
 #### Google Forms / WordPress Website ####
 
-As simple WordPress website has been created which serves as the starting point of the process (see [URL](https://programrecommendation.wordpress.com)). Google Forms has been linked with Responses in a Google Sheet (see next section). Therefore the link is available on the WordPress Website. Google sheets runs a script when the Google Form is submitted ([see script](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/txt/Google_Sheets_rest_API_camunda.txt)). The script triggers the process to be startd. The fist Task in the process is a Service Task, sending an e-mail to the user with the camunda invitation link. 
+As simple WordPress website has been created which serves as the starting point of the process (see [URL](https://programrecommendation.wordpress.com)). Google Forms has been linked with Responses in a Google Sheet (see next section). Therefore the link is available on the WordPress Website. Google sheets runs a script when the Google Form is submitted ([see script](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/txt/Google_Sheets_rest_API_camunda.txt)). The script triggers the process to be started. The fist Task in the process is a Service Task, sending an e-mail to the user with the camunda invitation link. 
 
 #### Google Sheets ####
 
@@ -146,7 +146,7 @@ JSON.stringify(out);
 
 ##### Microsoft Flow – POST: Sending of invitation e-mail
 
-Microsoft flow has been used for sending an e-mail containing inviation to the next process step.
+A e-mail is going to be send to the user containing the camunda invitation link.
 
 - Service Task REST with Body
 - URL: [MS Flow HTML request]
