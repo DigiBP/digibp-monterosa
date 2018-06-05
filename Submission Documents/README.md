@@ -120,6 +120,28 @@ Logic of the Google Sheet:
 
 #### ChatBot ####
 
+An initial effort of providing a more personalized function is provided to capture the preliminary details using a chat bot. This scenario is realized using Dialog Flow and Integromat. The values are stored in Spreadsheet using web hooks.
+
+A brief description of the concept used to realize this is depicted below:
+
+- The Different Intents created and used to realize this Chat bot are shown below
+![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/chatbot1.png)
+
+- The Chat bot is triggered when the candidates provides “hi” or “hello” as a greeting message and the flow of communication is passed to the next intent. The concept used in creating this is an inline intent within the context of the existing intent as shown below:
+![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/chatbot2.png)
+
+- The entities in this case were Boolean values (yes or no), thus this example did not used any inbuilt entity and created four different entities for the Boolean values that we require.
+![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/chatbot3.png)
+
+- The value at each intent is captured and stored for that instance and passed on to the next so that at the end of the entire conversation, a combination of all captured values can be collected and passed on to Integromat for back end service integration (In our example a Google spreadsheet). An example of both the above-mentioned scenarios are shown below:
+![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/chatbot4.png)
+
+![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/chatbot5.png)
+
+-Since this example demonstrated an inline intent, it is not required to enable a web-hook to call for each intent. The web hooks need to be enabled in Dialog Flow where the values of all the intents (Ex: Last Intent) is being captured as shown below:
+![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/chatbot6.png)
+
+
 ### Integration ###
 
 For the integration of the services Microsoft Flow and Integromat have been used.
