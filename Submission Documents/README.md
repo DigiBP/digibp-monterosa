@@ -282,11 +282,11 @@ Then the second match appears. Then click on "Complete".
 And finally, the third match appears. Then click on "Complete".
 ![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/11.third_match.png)
 
-12. Finally, the next step can be chosen.
+12. Then, the next step can be chosen.
 ![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/12.next_step.png)
 
-13. Afterwards an e-mail has been sent with the corresponding information, depending on the choice made in step 12.
+13. Afterwards an e-mail has been sent to you with the corresponding information, depending on the choice made in step 12. In this scenario "I would like to receive the application form" has been chosen.
 ![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/13.confirm-mail.png)
 
-14. There should be an e-mail in your inbox. When selected in step 12. "I would like to receive the application form", the following link with the application form is going to be in your inbox. At this point the process ends.
+14. There should be an e-mail in your inbox. According to the selection made in step 12, a corresponding URL has been sent to you. By sending you the following e-mail, the process ends at this point.
 ![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/14.mail_inbox_documents.png)
