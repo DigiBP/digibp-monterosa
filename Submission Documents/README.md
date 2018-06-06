@@ -58,7 +58,7 @@ Currently, there is only the sub-process "Program Registration" existent. There 
 Project "Recommend Study Program":
 The project for the digitalization of the sub-process "Recommend Study Program" is done within the Module "Digitalization of Business Processes" of the MSc Business Information Systems program. The goal is to digitize the process through a workflow management system with some service integration.
 
-v### BPMN Process Modell ###
+### BPMN Process Modell ###
 
 The BPMN process model starts with the prospective students with filling in a basic questionnaire, via filling in auxiliary an second more
 sophisticated questionnaire, that leads to a study program recommendation and will end the process.
@@ -81,7 +81,7 @@ In the process are 3 groups of task types used. These are the service tasks, use
 Inside the process are four different event types used. A process always starts with a start event and an end event, in between is three times the exclusive gateway and two times the inclusive gateway used.
 ![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/event_types.png)
 
-#### Users####
+#### Users ####
 Within this process are two roles involved. This is first the swim lane **User**, the role of the prospective student and
 second the swim lane **Automated**, which is served automatically. 
 ![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/User.png)
