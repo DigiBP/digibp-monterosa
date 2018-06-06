@@ -166,7 +166,7 @@ For the integration of the services Microsoft Flow and Integromat have been used
 
 ##### Microsoft Flow – POST: Sending of information e-mail 
 
-Microsoft flow has been used for sending an e-mail containing information concerning the study program.
+Microsoft flow has been used for sending an e-mail containing information concerning the study program (after gateway of process step "Chose netx steps").
 
 - Service Task REST with Body
 - URL: [MS Flow HTML request]
@@ -184,7 +184,7 @@ JSON.stringify(out);
 
 ##### Microsoft Flow – POST: Sending of invitation e-mail
 
-An e-mail is going to be send to the user containing the camunda invitation link.
+An e-mail is going to be send to the user containing the camunda invitation link (process step "Invite candidate to Camund").
 
 - Service Task REST with Body
 - URL: [MS Flow HTML request]
