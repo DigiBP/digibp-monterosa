@@ -164,24 +164,6 @@ For the integration of the services Microsoft Flow and Integromat have been used
 
 #### Microsoft Flow ####
 
-##### Microsoft Flow – POST: Sending of information e-mail 
-
-Microsoft flow has been used for sending an e-mail containing information concerning the study program (after gateway of process step "Chose netx steps").
-
-- Service Task REST with Body
-- URL: [MS Flow HTML request]
-- Method: POST
-- Headers: Content-Type:application/json
-- Payload: 
-
-var email = execution.getVariable("email");
-var out = {"email":email};
-JSON.stringify(out);
-
-![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/Post_sending_email.png)
-
-[Link JSON-Request](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/txt/JSON_request_sending_mail.txt)
-
 ##### Microsoft Flow – POST: Sending of invitation e-mail
 
 An e-mail is going to be send to the user containing the camunda invitation link (process step "Invite candidate to Camund").
@@ -199,6 +181,24 @@ JSON.stringify(out);
 ![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/post_sending_email_invitation.png)
 
 [Link JSON-Request](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/txt/JSON_request_sending_mail_invitation.txt)
+
+##### Microsoft Flow – POST: Sending of information e-mail 
+
+Microsoft flow has been used for sending an e-mail containing information concerning the study program (after gateway of process step "Chose netx steps").
+
+- Service Task REST with Body
+- URL: [MS Flow HTML request]
+- Method: POST
+- Headers: Content-Type:application/json
+- Payload: 
+
+var email = execution.getVariable("email");
+var out = {"email":email};
+JSON.stringify(out);
+
+![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/Post_sending_email.png)
+
+[Link JSON-Request](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/txt/JSON_request_sending_mail.txt)
 
 ##### Microsoft Flow – POST Questionnaire Data to Google Sheets
 
