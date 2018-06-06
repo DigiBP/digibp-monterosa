@@ -101,7 +101,7 @@ Due to user friendliness, the Chatbot has not been connected. Instead Google For
 
 #### Google Forms / WordPress Website ####
 
-As simple WordPress website has been created which is combined with Google Forms (see [URL](https://programrecommendation.wordpress.com)). This Website serves as a starting point of the process. The Google Forms has been linked with Responses in a Google Sheet. Google sheets runs a script when the Google Form is submitted ([see script](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/txt/Google_Sheets_rest_API_camunda.txt)). The script triggers the process to be started. The first Task in the process is a Service Task, sending an e-mail to the user with the camunda invitation link.
+As simple WordPress website has been created which is combined with Google Forms (see [URL](https://programrecommendation.wordpress.com)). This Website serves as a starting point of the process. The Google Forms has been linked with responses in a Google Sheet. Google sheets runs a script when the Google Form is submitted ([see script](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/txt/Google_Sheets_rest_API_camunda.txt)). The script triggers the process to be started. The first Task in the process is a Service Task, sending an e-mail to the user with the camunda invitation link.
 
 #### Google Sheets ####
 
