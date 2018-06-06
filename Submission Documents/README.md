@@ -17,8 +17,6 @@ As one of the group members of the digibp-monterosa team works for the FHNW Scho
 
 ### Vision ###
 
-Vision:
-
 Matching a prospective student with the best fitting study program to foster the potential and satisfaction for students, study program, class environment and, therefore, as a consequence the society in economic and cultural aspects.
 
 
