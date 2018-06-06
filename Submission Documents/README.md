@@ -105,7 +105,7 @@ As simple WordPress website has been created which is combined with Google Forms
 
 #### Google Sheets ####
 
-Within the process step fill in recommendation questionnaire of the process model a user is going to fill in form. The data from this form is posted in a Google Sheets file. The objective of the Google sheet is to calculate the best match of a study program. The following image shows a screenshot of the Google Sheet. 
+Within the process step "fill in recommendation questionnaire" of the process model a user is going to fill in form. The data from this form is posted in a Google Sheets file. The objective of the Google sheet is to calculate the best match of a study program. The following image shows a screenshot of the Google Sheet. 
 
 ![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/excel.png)
 
