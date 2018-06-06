@@ -119,7 +119,7 @@ Logic of the Google Sheet:
      -	in case of tie: higher number of only two deviations
      -    and so on
      
-     Same for second and third.
+     Same Logic for second and third matches
 5. In the cells A36 to B38 an output containing the 3 best matches of study programs will be displayed.
 
 #### Chatbot ####
