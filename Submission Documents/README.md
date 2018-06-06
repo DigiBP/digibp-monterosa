@@ -58,26 +58,33 @@ Currently, there is only the sub-process "Program Registration" existent. There 
 Project "Recommend Study Program":
 The project for the digitalization of the sub-process "Recommend Study Program" is done within the Module "Digitalization of Business Processes" of the MSc Business Information Systems program. The goal is to digitize the process through a workflow management system with some service integration.
 
+v### BPMN Process Modell ###
 
-### Process Modell ###
-
-The following picture illustrates the complete designed process:
+The BPMN process model starts with the prospective students with filling in a basic questionnaire, via filling in auxiliary an second more
+sophisticated questionnaire, that leads to a study program recommendation and will end the process.
 
 ![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/Process_Camunda.png)
 
-The process starts with the prospective candidate, that visits the created WordPress website and clicks on the study recommendation 
-link. This link forwards the user to the first google-form where 
-
 #### Task Types ####
+
+In the process are 3 groups of task types used. These are the service tasks, user tasks and a DMN-decision table.
+
 ![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/Task_types.png)
 
+- **Service tasks:** These tasks are automatically executed by the machine and need no user action, this is the reason why these task are only in the swim lane "automated".
+- **User task:** These tasks need an action from a user. Therefore, these tasks are in the swim lane of the "user" or these tasks show or inform the user by visualizing content.
+- **DMN-decision table:** This task is basically a table with internal described logic, that calculates based on the inputs the right output.
+
+
 #### Event Types ####
+
+Inside the process are four different event types used. A process always starts with a start event and an end event, in between is three times the exclusive gateway and two times the inclusive gateway used.
 ![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/event_types.png)
 
-#### User & Groups ####
+#### Users####
+Within this process are two roles involved. This is first the swim lane **User**, the role of the prospective student and
+second the swim lane **Automated**, which is served automatically. 
 ![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/User.png)
-
-
 
 ## Digitalization ##
 ### DMN ###
