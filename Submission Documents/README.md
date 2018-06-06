@@ -96,6 +96,7 @@ The following services have been implemented into the process:
 - Google Forms combined with a WordPress Website
 - Google Sheets
 - Chatbot
+
 Due to user friendliness, the Chatbot has not been connected. Instead Google Forms and Google Sheets have been connected to the process.
 
 #### Google Forms / WordPress Website ####
