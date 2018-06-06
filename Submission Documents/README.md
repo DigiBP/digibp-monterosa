@@ -271,7 +271,7 @@ The same applies for “second” and “third” program. Both invoked separate
 10. Know click on the task "Fill in recommendation questionnaire". Fill in the form and press on complete.
 ![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/8.Fill_in_recommendation_questionnaire.png)
 
-11. Based on the input given via the form in step 10, the first three best matches are going to be displayed. 
+11. Based on the input given via the form in step 10, the first three best matches of study programs are going to be displayed. 
 
 First the best match is going to appear. Then click on "Complete".
 ![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/9.first_match.png)
