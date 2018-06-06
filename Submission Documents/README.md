@@ -276,10 +276,10 @@ The same applies for “second” and “third” program. Both invoked separate
 First the best match is going to appear. Then click on "Complete".
 ![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/9.first_match.png)
 
-Then the second match. Then click on "Complete".
+Then the second match appears. Then click on "Complete".
 ![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/10.second_match.png)
 
-And finally, the third match. Then click on "Complete".
+And finally, the third match appears. Then click on "Complete".
 ![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/11.third_match.png)
 
 12. Finally, the next step can be chosen.
