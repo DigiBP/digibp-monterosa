@@ -60,34 +60,33 @@ The project for the digitalization of the sub-process "Recommend Study Program" 
 
 ### BPMN Process Modell ###
 
-The BPMN process model starts with the prospective students with filling in a basic questionnaire, via filling in auxiliary an second more
-sophisticated questionnaire, that leads to a study program recommendation and will end the process.
+The BPMN process model starts with the prospective students by filling in a basic questionnaire. Via filling in an auxiliary   more sophisticated questionnaire, this leads to a study program recommendation and will end the process.
 
 ![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/Process_Camunda.png)
 
 #### Task Types ####
 
-In the process are three groups of task types used. These are the service tasks, user tasks and a DMN-decision table.
+In the process there are three groups of task types used. These are service tasks, user tasks and a DMN-decision table.
 
 ![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/Task_types.png)
 
-- **Service tasks:** These tasks are automatically executed by the machine and need no user action, this is the reason why these task are only in the swim lane "automated".
-- **User task:** These tasks need either an action from a user and are therefore in the swim lane of the "user" or these tasks show or inform the user by visualizing content and are then in the swim lane "automated".
+- **Service tasks:** These tasks are automatically executed by a machine and need no user action, this is the reason why these tasks are only in the swim lane "automated".
+- **User task:** These tasks need either an action from a user and are therefore in the swim lane "user", or these tasks show or inform a user by visualizing content and are then in the swim lane "automated".
 - **DMN-decision table:** This task is a table with internal described logic, that based on the inputs calculates the output.
 
 
 #### Event Types ####
 
-Inside the process are four different event types used. A process always starts with a start event and ends with an end event, in between is three times the exclusive gateway and two times the inclusive gateway used.
+The process contains four different event types. A process always starts with a start event and ends with an end event, in between three times an exclusive gateway and two times an inclusive gateway have been applied.
 ![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/event_types.png)
 
 #### Users ####
-Within this process are two roles involved. This is first the swim lane **User**, the role of the prospective student and
-second the swim lane **Automated**, which is served automatically by the programmed algorithm. 
+
+Within this process two roles are involved. First the swim lane **User**, which is the role of a prospective student. The
+second swim lane **Automated** is served automatically by the programmed algorithm. 
 ![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/User.png)
 
-## Digitalization ##
-### DMN ###
+#### DMN ####
 
 Within the first process step according to the process model, a user is going to fill in a questionnaire. Based on the input data of this questionnaire and the [study regulation](https://www.fhnw.ch/de/studium/wirtschaft) a preselection of possible study programs is made by a DMN (Decision Model and Notation). The following DRD (Decision Requirement Diagram) shows the relation of the input data for the DMN.
 
@@ -96,6 +95,8 @@ Within the first process step according to the process model, a user is going to
 The determined business rules have been applied within a DMN in order to execute a preselection of a study program. The following DMN shows the determined business rules.
 
 ![alt text](https://github.com/DigiBP/digibp-monterosa/blob/master/Submission%20Documents/Images/DMN_BSc_program.png)
+
+## Digitalization ##
 
 ### Services ###
 
